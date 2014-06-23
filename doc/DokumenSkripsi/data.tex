@@ -1,0 +1,263 @@
+%_____________________________________________________________________________
+%=============================================================================
+% data.tex v5 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+%
+% Perubahan pada versi 5 (10-11-2013)
+% - Perbaikan pada memasukkan bab : tidak perlu menuliskan apapun untuk 
+%	memasukkan seluruh bab (bagian V)
+% - Perbaikan pada memasukkan lampiran : tidak perlu menuliskan apapun untuk
+%	memasukkan seluruh lampiran atau -1 jika tidak memasukkan apapun
+%
+% Perubahan pada versi sebelumnya
+%	versi 4 (21-10-2012)
+%	- Data dosen dipindah ke dosen.tex agar jika ada perubahan/update data dosen
+%   mahasiswa tidak perlu mengubah data.tex
+%	- Perubahan pada keterangan dosen	
+% 	versi 3 (06-08-2012)
+% 	- Perubahan pada beberapa keterangan 
+% 	versi 2 (09-07-2012):
+% 	- Menambahkan data judul dalam bahasa inggris
+% 	- Membuat bagian khusus untuk judul (bagian VIII)
+% 	- Perbaikan pada gelar dosen
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN -
+%=============================================================================
+% Ini adalah file data (data.tex)
+% Masukkan ke dalam file ini, data-data yang diperlukan oleh template ini
+% Cara memasukkan data dijelaskan di setiap bagian
+% Data yang WAJIB dan HARUS diisi dengan baik dan benar adalah SELURUHNYA !!
+%=============================================================================
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN I
+%=============================================================================
+% Tambahkan package2 lain yang anda butuhkan di sini
+%=============================================================================
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage{amsmath}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN II
+%=============================================================================
+% Mode dokumen: menetukan halaman depan dari dokumen, apakah harus mengandung 
+% prakata/pernyataan/abstrak dll (termasuk daftar gambar/tabel/isi) ?
+% - kosong : tidak ada halaman depan sama sekali (untuk dokumen yang 
+%            dipergunakan pada proses bimbingan)
+% - cover : cover saja tanpa daftar isi, gambar dan tabel
+% - sidang : cover, daftar isi, gambar, tabel (IT: UTS-UAS Seminar 
+%			 dan UTS TA)
+% - sidang_akhir : mode sidang + abstrak + abstract
+% - final : seluruh halaman awal dokumen (untuk cetak final)
+% Jika tidak ingin mencetak daftar tabel/gambar (misalkan karena tidak ada 
+% isinya), edit manual di baris 439 dan 440 pada file main.tex
+%=============================================================================
+% \mode{kosong}
+% \mode{cover}
+% \mode{sidang}
+%\mode{sidang_akhir}
+\mode{final} 
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN III
+%=============================================================================
+% Line numbering: penomoran setiap baris, otomatis di-reset setiap berganti
+% halaman
+% - yes: setiap baris diberi nomor
+% - no : baris tidak diberi nomor, otomatis untuk mode final
+%=============================================================================
+\linenumber{yes}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN IV
+%=============================================================================
+% Linespacing: jarak antara baris 
+% - single: opsi yang disediakan untuk bimbingan, jika pembimbing tidak
+%            keberatan (untuk menghemat kertas)
+% - onehalf: default dan wajib (dan otomatis) jika ingin mencetak dokumen
+%            final/untuk sidang.
+% - double : jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
+%            catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
+%=============================================================================
+\linespacing{single}
+% \linespacing{onehalf}
+%\linespacing{double}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN V
+%=============================================================================
+% Bab yang akan dicetak: isi dengan angka 1,2,3 s.d 9, sehingga bisa digunakan
+% untuk mencetak hanya 1 atau beberapa bab saja
+% Jika lebih dari 1 bab, pisahkan dengan ',', bab akan dicetak terurut sesuai 
+% urutan bab.
+% Untuk mencetak seluruh bab, kosongkan parameter (i.e. \bab{ })  
+% Catatan: Jika ingin menambahkan bab ke-10 dan seterusnya, harus dilakukan 
+% secara manual
+%=============================================================================
+\bab{ }
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN VI
+%=============================================================================
+% Lampiran yang akan dicetak: isi dengan huruf A,B,C s.d I, sehingga bisa 
+% digunakan untuk mencetak hanya 1 atau beberapa lampiran saja
+% Jika lebih dari 1 lampiran, pisahkan dengan ',', lampiran akan dicetak 
+% terurut sesuai urutan lampiran
+% Jika tidak ingin mencetak lampiran apapun, isi dengan -1 (i.e. \lampiran{-1})
+% Untuk mencetak seluruh mapiran, kosongkan parameter (i.e. \lampiran{ })  
+% Catatan: Jika ingin menambahkan lampiran ke-J dan seterusnya, harus 
+% dilakukan secara manual
+%=============================================================================
+\lampiran{ }
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN VII
+%=============================================================================
+% Data diri dan skripsi/tugas akhir
+% - namanpm: Nama dan NPM anda, penggunaan huruf besar untuk nama harus benar
+%			 dan gunakan 10 digit npm UNPAR, PASTIKAN BAHWA BENAR !!!
+%			 (e.g. \namanpm{Jane Doe}{1992710001}
+% - judul : Dalam bahasa Indonesia, perhatikan penggunaan huruf besar, judul
+%			tidak menggunakan huruf besar seluruhnya !!! 
+% - tanggal : isi dengan {tangga}{bulan}{tahun} dalam angka numerik, jangan 
+%			  menuliskan kata (e.g. AGUSTUS) dalam isian bulan
+%			  Tanggal ini adalah tanggal dimana anda akan melaksanakan sidang 
+%			  ujian akhir skripsi/tugas akhir
+% - pembimbing: isi dengan pembimbing anda, lihat daftar dosen di file dosen.tex
+%				jika pembimbing hanya 1, kosongkan parameter kedua 
+%				(e.g. \pembimbing{\JND}{  } )
+% - penguji : isi dengan para penguji anda, lihat daftar dosen di file dosen.tex
+%				(e.g. \penguji{\JHD}{\JCD} )
+%=============================================================================
+\namanpm{Lionov}{1997730020}
+\tanggal{1}{7}{2002}
+\pembimbing{\OSS}{\TAB}     %Lihat singkatan pembimbing anda di file dosen.tex
+\penguji{\NIS}{\CEN} 		%Lihat singkatan penguji anda di file dosen.tex
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN VIII
+%=============================================================================
+% Judul dan title : judul bhs indonesia dan inggris
+% - judulINA: judul dalam bahasa indonesia
+% - judulENG: title in english
+% PERHATIAN: - langsung mulai setelah '{' awal, jangan mulai menulis di baris 
+%			   bawahnya
+%			 - Gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
+%			 - Judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
+%=============================================================================
+
+\judulINA{Mengikuti Mayoritas: \texorpdfstring{\\}{} Sebuah Algoritma Baru Untuk Menghitung \texorpdfstring{\\}{} Median Trajectory}
+
+\judulENG{Following The Majority: \texorpdfstring{\\}{} a New Algorithm for Computing \texorpdfstring{\\}{} a Median Trajectory}
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN IX
+%=============================================================================
+% Abstrak dan abstract : abstrak bhs indonesia dan inggris
+% - abstrakINA: abstrak bahasa indonesia
+% - abstrakENG: abstract in english
+% PERHATIAN: langsung mulai setelah '{' awal, jangan mulai menulis di baris 
+%			 bawahnya
+%=============================================================================
+
+\abstrakINA{Kami mengembangkan dua algoritma baru untuk menghitung lintasan dari median set lintasan.
+	Algoritma pertama adalah $O(1.2108^{m} + m^{5}n^{5})$ terburuk waktu algoritma, dengan menggunakan konsep Jarak Fr\'{e}chet.
+	Algoritma kedua menggunakan metode penyangga.
+	Dalam situasi praktis, algoritma ini dapat menghitung median lintasan di $O((mn)^{2} \log mn)$ waktu.
+	Untuk kedua algoritma, $m$ adalah jumlah lintasan dalam mengatur dan lintasan masing-masing memiliki segmen $n$.
+	Kami membandingkan algoritma buffer dengan dua algoritma lain, salah satu dari mereka menggunakan konsep homotopy.
+	Hasil kami menunjukkan bahwa algoritma penyangga melakukan agak lebih baik.
+
+	Kami mengembangkan dua algoritma baru untuk menghitung lintasan dari median set lintasan.
+	Algoritma pertama adalah $O(1.2108^{m} + m^{5}n^{5})$ terburuk waktu algoritma, dengan menggunakan konsep Jarak Fr\'{e}chet.
+	Algoritma kedua menggunakan metode penyangga.
+	Dalam situasi praktis, algoritma ini dapat menghitung median lintasan di $O((mn)^{2} \log mn)$ waktu.
+	Untuk kedua algoritma, $m$ adalah jumlah lintasan dalam mengatur dan lintasan masing-masing memiliki segmen $n$.
+	Kami membandingkan algoritma buffer dengan dua algoritma lain, salah satu dari mereka menggunakan konsep homotopy.
+	Hasil kami menunjukkan bahwa algoritma penyangga melakukan agak lebih baik.
+}
+
+\abstrakENG{We develop two new algorithms to compute a median trajectory from a
+	set of trajectories.
+	The first algorithm is an $O(1.2108^{m} + m^{5}n^{5})$ worst-case time algorithm, using the concept of Fr\'{e}chet Distance.
+	The second algorithm uses a buffer method.
+	In practical situations, this algorithm can compute the median trajectory in $O((mn)^{2} \log mn)$ time. 
+	For both algorithms, $m$ is the number of trajectories in the set and each trajectory has $n$ segments.
+	We compare the buffer algorithm with two other algorithms, one of them using the homotopy concept.
+	Our results suggest that the buffer algorithm performs somewhat better.
+	
+	We develop two new algorithms to compute a median trajectory from a
+	set of trajectories.
+	The first algorithm is an $O(1.2108^{m} + m^{5}n^{5})$ worst-case time algorithm, using the concept of Fr\'{e}chet Distance.
+	The second algorithm uses a buffer method.
+	In practical situations, this algorithm can compute the median trajectory in $O((mn)^{2} \log mn)$ time. 
+	For both algorithms, $m$ is the number of trajectories in the set and each trajectory has $n$ segments.
+	We compare the buffer algorithm with two other algorithms, one of them using the homotopy concept.
+	Our results suggest that the buffer algorithm performs somewhat better.
+} 
+
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN X
+%=============================================================================
+% Kata-kata kunci dan keywords : diletakkan di bawah abstrak (ina dan eng)
+% - kunciINA: kata-kata kunci dalam bahasa indonesia
+% - kunciENG: keywords in english
+%=============================================================================
+\kunciINA{Lintasan, Homotopy, Fr\'{e}chet, Lintasan Median, Penyangga}
+
+\kunciENG{Trajectory, Homotopy, Fr\'{e}chet, Median Trajectory, Buffer}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XI
+%=============================================================================
+% Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
+%=============================================================================
+\untuk{Dipersembahkan untuk diri sendiri }
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XII
+%=============================================================================
+% Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
+% kasih kepada yang telah membantu anda bla bla bla ....  
+%=============================================================================
+\prakata{\lipsum}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XIII
+%=============================================================================
+% Tambahkan hyphen (pemenggalan kata) yang anda butuhkan di sini 
+%=============================================================================
+\hyphenation{ma-te-ma-ti-ka}
+\hyphenation{fi-si-ka}
+\hyphenation{tek-nik}
+\hyphenation{in-for-ma-ti-ka}
+%=============================================================================
+
+
+%=============================================================================

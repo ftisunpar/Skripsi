@@ -1,0 +1,117 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{AIF401 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2015/2016}}}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%tulis nama dan NPM anda di sini:
+\newcommand{\nama}{Lionov}
+\newcommand{\@npm}{1997730020}
+\newcommand{\@judultopik}{Median Trajectory} % Judul/topik anda
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\tanggal}{01/01/1900}
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Deskripsi}
+Tuliskan deskripsi dari topik skripsi yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
+
+\lipsum[1] %hapus ini
+
+\section{Rumusan Masalah}
+Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+
+\section{Tujuan}
+Tuliskan tujuan dari topik skripsi yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
+
+\section{Deskripsi Perangkat Lunak}
+Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
+
+Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
+\begin{itemize}
+	\item Pengguna dapat membangkitkan data-data {\it trajectory} secara otomatis sesuai dengan aturan yang telah ditentukan.
+	\item Pengguna dapat memasukkan secara manual data-data {\it trajectory}, baik melalui suatu {\it GUI (Graphical User Interface)} maupun melalui file teks. 
+	\item PL dapat menampilkan data-data yang sudah dimasukkan ataupun yang dibangkitkan secara otomatis melalui {\it GUI (Graphical User Interface)}.
+	\item Pengguna dapat memasukkan parameter-parameter yang digunakan oleh algoritma.
+	\item PL dapat menghitung dan menampilkan median trajectory secara otomatis, berdasarkan data-data trajectory yang diberikan.
+	\item PL dapat secara otomatis melakukan pembangkitan data untuk digunakan pada beberapa ratus tes kasus yang akan diuji. Untuk setiap tes kasus, PL dapat membuat laporan lengkap mengenai tes kasus tersebut.
+\end{itemize}
+
+\section{Rencana Kerja}
+Tuliskan rencana anda untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2. Perhatikan contoh berikut ini :
+
+Rencana kerja untuk menyelesaikan skripsi ini:
+\begin{itemize}
+	\item Pada saat mengambil kuliah AIF401 Skripsi 1
+	\begin{enumerate}
+		\item Melakukan studi literatur tentang algoritma-algoritma yang berkaitan dengan pemrosesan data trajectory.
+		\item Mempelajari algoritma untuk menghitung Frechet Distance
+		\item Mempelajari fitur-fitur bahasa Java untuk membuat Graphical User Interface
+		\item Merancang algoritma/langkah-langkah untuk membuat secara otomatis pembangkit data trajectory
+	\end{enumerate}
+	\item Pada saat mengambil kuliah AIF401 Skripsi 2
+	\begin{enumerate}
+		\item Merancang dan mengimplementasikan algoritma untuk mencari Median Trajectory.
+		\item Mengimplementasikan pembangkit data trajectory 
+		\item Melakukan pengujian dan eksperimen
+		\item Membuat dokumentasi skripsi
+	\end{enumerate}
+\end{itemize}
+
+\section{Isi {\it Progress Report} Skripsi 1}
+Isi dari {\it Progress Report} Skripsi 1 yang akan diselesaikan paling lambat pada tanggal 1 Januari 1970 adalah :
+\begin{enumerate}
+	\item Algoritma/langkah-langkah untuk membuat pembangkit otomatis data trajectory
+	\item Hasil eksperimen penggunaan fitur-fitur Graphical User Interface pada bahasa Java
+	\item Algoritma dan contoh perhitungan untuk kasus menghitung jarak dengan Frechet Distance
+	\item \ldots (to be continued)
+\end{enumerate}
+Estimasi persentase penyelesaian skripsi sampai dengan {\it Progress Report} Skripsi 1 adalah : 99\%
+\vspace{1.5cm}
+
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+}
+`
+\end{document}
+

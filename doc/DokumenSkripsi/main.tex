@@ -1,0 +1,513 @@
+%_____________________________________________________________________________
+%=============================================================================
+% main.tex v6 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% 
+% Ini adalah file utama (main.tex), berisi perintah-perintah yang khusus 
+% dibuat untuk template ini
+%
+% 			JANGAN MENGUBAH APAPUN DI DALAM FILE INI,
+%			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!!
+%
+% Jika ada tambahan perintah, dapat anda tuliskan di tempat yang telah disediakan 
+% di baris 295 pada file ini
+% Jika daftar tabel tidak digunakan, anda harus menghapus (beri komentar) secara
+% manual di baris 470
+%
+% Bug, kritik, saran: silahkan kirimkan via email ke lionov@unpar.ac.id
+%
+% Perubahan pada versi 6 (10-11-2013):
+%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
+%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
+%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
+%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
+%	- Kurikulum 2013 : perubahan nama buku skripsi 
+%
+% Perubahan dari versi sebelumnya :
+%	versi 5 (21-10-2012)
+%	- halaman terakhir setiap bab tidak ada headernya jika kosong
+%	versi 4 (06-08-2012)
+% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
+% 	- menambahkan keterangan di lampiran untuk kode program 
+% 	- ukuran font dapat diubah langsung di tiap lampiran
+% 	versi 3 (09-07-2012): 
+%	- Tidak ada di file ini
+% 	versi 2 :
+% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
+% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
+% 	- Spasi pada buku dokumen final adalah onehalfspacing
+%
+% to do : - hilangkan secara otomatis daftar tabel/gambar jika tidak digunakan
+%         - (IT) aturan penulisan algoritma untuk IT (pakai algo.sty ?)
+%=============================================================================
+
+%=============================================================================
+% setup.tex v2 (08-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan perintah untuk judulINA dan judulENG
+% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
+%=============================================================================
+% depan.tex v2 (09-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan halaman depan dalam bahasa inggris
+%=============================================================================
+
+%setup.tex
+\documentclass[11pt,a4paper,twoside,openright,notitlepage]{report} 
+
+\usepackage[bahasa]{babel} %bahasa indonesia
+\usepackage[T1]{fontenc}  %encoding
+% \usepackage{mathptmx}
+% \usepackage{venturisold}
+% \usepackage{helvet}
+% \usepackage{fouriernc} 
+\usepackage{abstract} %manipulasi abstract
+\usepackage{chappg} % format daftar isi 
+\usepackage{color} %warna
+\usepackage{etoolbox} %untuk programming if-then
+\usepackage{fancyhdr} %format header & footer
+\usepackage{float} %penempatan gambar di tempat yg seharusnya
+\usepackage[inner=2.5cm,outer=2cm,top=2.5cm,bottom=2.5cm]{geometry} %margin
+\usepackage{graphicx} %gambar
+\usepackage{listings} %source code
+\usepackage{lscape} %landscape untuk source code
+\usepackage{multicol} %multiple column
+\usepackage{ifthen} % if then
+\usepackage[pagewise]{lineno} %line numbering
+\usepackage{lipsum} % untuk testing
+\usepackage{titlesec} %judul header
+\usepackage{tocbibind} %daftar isi, gambar, tabel dll
+\usepackage{tocloft} % format daftar isi 
+\usepackage{setspace} %line spacing
+\usepackage{xstring} %manipulasi string
+\usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref} %\autoref, \phantomsection & link 
+
+\usepackage{emptypage}
+
+\let\abstractname\Abstrak
+
+\titleformat{\chapter}[display] {\Large\bfseries\centering}{\MakeUppercase{\chaptertitlename} \thechapter}{15pt}{\Large\MakeUppercase}
+
+\renewcommand{\cftchapfont}{\scshape \bfseries}
+
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+% Tidak perlu ada kata "Bab", "Gambar" atau "Tabel" di daftar 
+% \renewcommand{\cftchappresnum}{{\bf \scshape Bab} } 
+% \renewcommand{\cftchapnumwidth}{1.5cm}
+% \renewcommand{\cftfigpresnum}{{Gambar\ }} 
+% \renewcommand{\cftfignumwidth}{2.5cm}
+% \renewcommand{\cfttabpresnum}{{Tabel\ }} 
+% \renewcommand{\cfttabnumwidth}{2cm}
+
+\newcommand{\apptoc}{
+	% Hapus kata "Lampiran" dari daftar isi
+	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape Lampiran\  }}%
+	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{2.75cm}}
+	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape}}%	
+
+}
+
+\newcommand{\vnama}{Jane Doe}
+\newcommand{\vlnama}{John Doe}
+\newcommand{\vnpm}{1992700001}
+\newcommand{\vprodiINA}{SAINS}
+\newcommand{\vprodiENG}{SCIENCE}
+\newcommand{\vstaINA}{UJIAN}
+\newcommand{\vstaENG}{EXAM}
+%\newcommand{\vjudul}{Judul Skripsi/Tugas Akhir}
+\newcommand{\vpembu}{Plato}
+\newcommand{\vpembs}{Euclid}
+\newcommand{\vpengi}{Plato}
+\newcommand{\vpengii}{Euclid}
+\newcommand{\vtanggal}{1}
+\newcommand{\vbulan}{Januari}
+\newcommand{\vtahun}{1970}
+\newcommand{\vmode}{final}
+\newcommand{\vspacing}{double}
+\newcommand{\vlineno}{yes}
+\newcommand{\vkunciina}{Skripsi, Tugas Akhir}
+\newcommand{\vkuncieng}{Undergraduate Thesis, Final Project}
+\newcommand{\vkajur}{Jack Doe}
+\newcommand{\vkajurmat}{Jack Doe}
+\newcommand{\vkajurfis}{Jack Doe}
+\newcommand{\vkajurtif}{Jack Doe}
+
+\newcommand{\namanpm}[2]{
+	\renewcommand{\vnama}{\uppercase{#1}} \renewcommand{\vlnama}{#1} \hypersetup{pdfauthor={#2 - #1}}
+	\renewcommand{\vnpm}{#2} \hypersetup{pdfcreator={#2}} \StrChar{\vnpm}{6}[\vprodiN]
+	\ifdefstring{\vprodiN}{1}{
+		\renewcommand{\vprodiINA}{MATEMATIKA} \renewcommand{\vprodiENG}{MATHEMATICS} 
+		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{FINAL PROJECT} \renewcommand{\vkajur}{\vkajurmat}}{}
+	\ifdefstring{\vprodiN}{2}{
+		\renewcommand{\vprodiINA}{FISIKA} \renewcommand{\vprodiENG}{PHYSICS} 
+		\renewcommand{\vstaINA}{TUGAS AKHIR} \renewcommand{\vstaENG}{FINAL PROJECT} \renewcommand{\vkajur}{\vkajurfis}}{}
+	\ifdefstring{\vprodiN}{3}{
+		\renewcommand{\vprodiINA}{TEKNIK INFORMATIKA} \renewcommand{\vprodiENG}{INFORMATICS} 
+		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{UNDERGRADUATE THESIS} \renewcommand{\vkajur}{\vkajurtif}}{}}
+
+%\newcommand{\judul}[1]{\renewcommand{\vjudul}{\uppercase{#1}}\hypersetup{pdftitle={#1}, pdfsubject={#1}}}
+\newcommand{\pembimbing}[2]{\renewcommand{\vpembu}{#1}\renewcommand{\vpembs}{#2}}
+\newcommand{\penguji}[2]{\renewcommand{\vpengi}{#1}\renewcommand{\vpengii}{#2}}
+\newcommand{\kajur}[3]{\renewcommand{\vkajurmat}{#1}\renewcommand{\vkajurfis}{#2}\renewcommand{\vkajurtif}{#3}}
+\newcommand{\tanggal}[3]{\renewcommand{\vtanggal}{#1}\renewcommand{\vtahun}{#3}
+	\newcommand{\vcbulan}{#2}
+	\ifdefstring{\vcbulan}{1}{\renewcommand{\vbulan}{Januari}}{}
+	\ifdefstring{\vcbulan}{2}{\renewcommand{\vbulan}{Februari}}{}
+	\ifdefstring{\vcbulan}{3}{\renewcommand{\vbulan}{Maret}}{}
+	\ifdefstring{\vcbulan}{4}{\renewcommand{\vbulan}{April}}{}
+	\ifdefstring{\vcbulan}{5}{\renewcommand{\vbulan}{Mei}}{}
+	\ifdefstring{\vcbulan}{6}{\renewcommand{\vbulan}{Juni}}{}
+	\ifdefstring{\vcbulan}{7}{\renewcommand{\vbulan}{Juli}}{}
+	\ifdefstring{\vcbulan}{8}{\renewcommand{\vbulan}{Agustus}}{}
+	\ifdefstring{\vcbulan}{9}{\renewcommand{\vbulan}{September}}{}
+	\ifdefstring{\vcbulan}{10}{\renewcommand{\vbulan}{Oktober}}{}
+	\ifdefstring{\vcbulan}{11}{\renewcommand{\vbulan}{November}}{}
+	\ifdefstring{\vcbulan}{12}{\renewcommand{\vbulan}{Desember}}{}	
+}
+
+\newcommand{\judulINA}[1]{\newcommand{\vjudulINA}{\uppercase{#1}}\hypersetup{pdftitle={#1},pdfsubject={#1}}}
+\newcommand{\judulENG}[1]{\newcommand{\vjudulENG}{\uppercase{#1}}\hypersetup{pdftitle={#1},pdfsubject={#1}}}
+\newcommand{\abstrakINA}[1]{\newcommand{\vabstrakina}{#1}}
+\newcommand{\abstrakENG}[1]{\newcommand{\vabstrakeng}{#1}}
+\newcommand{\kunciINA}[1]{\renewcommand{\vkunciina}{#1} \hypersetup{pdfkeywords={#1}}}
+\newcommand{\kunciENG}[1]{\renewcommand{\vkuncieng}{#1}}
+\newcommand{\untuk}[1]{\newcommand{\vuntuk}{#1}}
+\newcommand{\prakata}[1]{\newcommand{\vprakata}{#1}}
+\newcommand{\mode}[1]{\renewcommand{\vmode}{#1}}
+\newcommand{\linespacing}[1]{\renewcommand{\vspacing}{#1}}
+\newcommand{\linenumber}[1]{\renewcommand{\vlineno}{#1}}
+
+\newcommand{\bab}[1]{\newcommand{\vbab}{#1}}
+\newcommand{\lampiran}[1]{\renewcommand{\vlmp}{#1}}
+
+\newcommand{\vpilbab}{0}
+\newcommand{\vbaba}{0}\newcommand{\vbabb}{0}\newcommand{\vbabc}{0}
+\newcommand{\vbabd}{0}\newcommand{\vbabe}{0}\newcommand{\vbabf}{0}
+\newcommand{\vbabg}{0}\newcommand{\vbabh}{0}\newcommand{\vbabi}{0}
+\newcommand{\vpillmp}{0}
+\newcommand{\vlmpa}{0}\newcommand{\vlmpb}{0}\newcommand{\vlmpc}{0}
+\newcommand{\vlmpd}{0}\newcommand{\vlmpe}{0}\newcommand{\vlmpf}{0}
+\newcommand{\vlmpg}{0}\newcommand{\vlmph}{0}\newcommand{\vlmpi}{0}
+\newcommand{\vlmp}{x}
+
+%	\ifdefempty{#1}{\bab{1,2,3,4,5,6,7,8,9} \tampilbab{\vbab}}{
+\newcommand{\tampilbab}[1]{
+	\ifdefempty{#1}{
+		\renewcommand{\vbaba}{1}\renewcommand{\vbabb}{1}\renewcommand{\vbabc}{1}
+		\renewcommand{\vbabd}{1}\renewcommand{\vbabe}{1}\renewcommand{\vbabf}{1}
+		\renewcommand{\vbabg}{1}\renewcommand{\vbabh}{1}\renewcommand{\vbabi}{1}}{
+	\renewcommand{\do}[1]{
+		\renewcommand{\vpilbab}{##1}
+		\ifdefstring{\vpilbab}{1}{\renewcommand{\vbaba}{1}}{}
+		\ifdefstring{\vpilbab}{2}{\renewcommand{\vbabb}{1}}{}
+		\ifdefstring{\vpilbab}{3}{\renewcommand{\vbabc}{1}}{}
+		\ifdefstring{\vpilbab}{4}{\renewcommand{\vbabd}{1}}{}
+		\ifdefstring{\vpilbab}{5}{\renewcommand{\vbabe}{1}}{}
+		\ifdefstring{\vpilbab}{6}{\renewcommand{\vbabf}{1}}{}
+		\ifdefstring{\vpilbab}{7}{\renewcommand{\vbabg}{1}}{}
+		\ifdefstring{\vpilbab}{8}{\renewcommand{\vbabh}{1}}{}
+		\ifdefstring{\vpilbab}{9}{\renewcommand{\vbabi}{1}}{}
+	}
+	\expandafter\docsvlist\expandafter{#1}
+	}
+}
+
+\newcommand{\tampillmp}[1]{
+	\ifdefempty{#1}{
+		\renewcommand{\vlmpa}{1}\renewcommand{\vlmpb}{1}\renewcommand{\vlmpc}{1}
+		\renewcommand{\vlmpd}{1}\renewcommand{\vlmpe}{1}\renewcommand{\vlmpf}{1}
+		\renewcommand{\vlmpg}{1}\renewcommand{\vlmph}{1}\renewcommand{\vlmpi}{1}}{
+	\ifdefstring{#1}{-1}{ }{
+		\renewcommand{\do}[1]{ 
+			\renewcommand{\vpillmp}{##1}
+			\ifdefstring{\vpillmp}{A}{\renewcommand{\vlmpa}{1}}{}
+			\ifdefstring{\vpillmp}{B}{\renewcommand{\vlmpb}{1}}{}
+			\ifdefstring{\vpillmp}{C}{\renewcommand{\vlmpc}{1}}{}
+			\ifdefstring{\vpillmp}{D}{\renewcommand{\vlmpd}{1}}{}
+			\ifdefstring{\vpillmp}{E}{\renewcommand{\vlmpe}{1}}{}
+			\ifdefstring{\vpillmp}{F}{\renewcommand{\vlmpf}{1}}{}
+			\ifdefstring{\vpillmp}{G}{\renewcommand{\vlmpg}{1}}{}
+			\ifdefstring{\vpillmp}{H}{\renewcommand{\vlmph}{1}}{}
+			\ifdefstring{\vpillmp}{I}{\renewcommand{\vlmpi}{1}}{}}
+		}
+	\expandafter\docsvlist\expandafter{#1}
+	}
+}
+
+\newcommand{\appspacing}{
+	\ifdefstring{\vspacing}{single}{\singlespacing}{}
+	\ifdefstring{\vspacing}{onehalf}{\onehalfspacing}{}
+	\ifdefstring{\vspacing}{double}{\doublespacing}{}
+	\ifdefstring{\vmode}{final}{\onehalfspacing}{}
+}
+
+\newcommand{\appline}{
+	\ifdefstring{\vmode}{final}{\renewcommand{\vlineno}{no}}{}
+	\ifdefstring{\vlineno}{yes}{\linenumbers \def\linenumberfont{\normalfont\tiny\sffamily}}{}
+	\ifdefstring{\vlineno}{no}{\lstset{numbers=left, stepnumber=1, numbersep=5pt}}{}
+	
+}
+
+\newcommand{\appmargin}{
+	\ifdefstring{\vmode}{final}{}{\newgeometry{inner=3cm,outer=2.75cm,top=2cm,bottom=2cm}}
+}
+
+\renewcommand{\abstractnamefont}{\bf \MakeUppercase}
+
+\makeatletter
+\def\headrule{{%
+  \if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+  \hrule\@height\footrulewidth\@width\headwidth\vskip2pt%
+  \hrule\@height\headrulewidth\@width\headwidth\vskip-\headrulewidth\vskip-4pt
+}}
+\def\footrule{}
+
+\def\cleardoublepage{
+	\clearpage
+	\if@twoside \ifodd\c@page
+	\else
+		\hbox{}
+		\vspace{\fill}
+		\thispagestyle{empty}
+		\newpage
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+\renewcommand{\headrulewidth}{1.25pt}
+\renewcommand{\footrulewidth}{0.25pt}
+
+\setlength{\headheight}{15pt}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\small{\textsc{\nouppercase{\leftmark}}}}
+\fancyhead[LO]{\small{\textsc{\nouppercase{\rightmark}}}}
+\fancyfoot{}
+
+\hypersetup{unicode=true,colorlinks=true,linkcolor=blue,citecolor=green,filecolor=magenta, urlcolor=cyan}
+
+\lstset{basicstyle=\tiny, commentstyle=\color{blue}}
+\lstset{frame=leftline, tabsize=4, breaklines=true}
+
+%=============================================================================
+
+%tambahkan perintah yang anda butuhkan di sini :
+
+%=============================================================================
+%end setup.tex
+
+\include{data}
+\include{dosen}
+
+\begin{document}
+
+\def\bibname{Daftar Referensi}
+\def\abstractname{Abstrak}
+
+\pagestyle{empty}
+
+%depan.tex
+\ifdefstring{\vmode}{kosong}{}{
+
+\pagenumbering{roman}
+
+%cover INA
+\begin{center}
+	{\Large\bf \vstaINA \\} 	\vspace{1.5cm}
+	{\Large \bf \vjudulINA \\} \vspace{2.5cm}
+	\includegraphics[scale=0.4]{Gambar/logo-unpar}\\ \vspace{1cm}
+	{\Large \bf \vnama \\} \vspace{0.5cm}
+	{\Large \bf NPM: \vnpm \\}
+	\vfill
+	\Large{ \textbf { 
+		PROGRAM STUDI \vprodiINA \\
+		FAKULTAS TEKNOLOGI INFORMASI DAN SAINS\\
+		UNIVERSITAS KATOLIK PARAHYANGAN\\
+		\vtahun 
+	}}
+\end{center}
+\cleardoublepage
+
+%cover ENG
+\begin{center}
+	{\Large\bf \vstaENG \\} 	\vspace{1.5cm}
+	{\Large \bf \vjudulENG \\} \vspace{2.5cm}
+	\includegraphics[scale=0.4]{Gambar/logo-unpar}\\ \vspace{1cm}
+	{\Large \bf \vnama \\} \vspace{0.5cm}
+	{\Large \bf NPM: \vnpm \\}
+	\vfill
+	\Large{ \textbf { 
+		DEPARTMENT OF \vprodiENG \\
+		FACULTY OF INFORMATION TECHNOLOGY AND SCIENCES\\
+		PARAHYANGAN CATHOLIC UNIVERSITY\\
+		\vtahun 
+	}}
+\end{center}
+\cleardoublepage
+
+
+% Lembar pengesahan
+\ifdefstring{\vmode}{final}{
+\begin{center}
+	{\Large\bf LEMBAR PENGESAHAN \\} 	\vspace{1.5cm}
+	{\Large \bf \vjudulINA \\} 			\vspace{1cm}
+	{\Large \bf \vnama \\}				\vspace{0.5cm}
+	{\Large \bf NPM: \vnpm \\}			\vspace{1.5cm}
+	\large{ \bfseries{
+		\begin{centering} 
+			Bandung, \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.25cm} Menyetujui,\\
+			\vspace{0.75cm}
+			\ifdefempty{\vpembs}
+					{\centering Pembimbing Tunggal\\ \vspace{2cm} \vpembu\\}
+					{ 	\begin{minipage}[b]{0.46\linewidth}
+							\centering Pembimbing Utama \\ \vspace{2.25cm} \vpembu \\
+						\end{minipage} \hspace{0.5cm}
+						\begin{minipage}[b]{0.46\linewidth}
+							\centering Pembimbing Pendamping \\	\vspace{2.25cm} \vpembs \\
+						\end{minipage}	
+					}
+		\end{centering}
+		\vspace{1.25cm}
+		\begin{centering}	
+			\begin{minipage}[b]{0.46\linewidth}
+				\centering Ketua Tim Penguji \\ \vspace{2.25cm} \vpengi \\
+			\end{minipage} \hspace{0.5cm}
+			\begin{minipage}[b]{0.46\linewidth}
+				\centering Anggota Tim Penguji \\ \vspace{2.25cm} \vpengii 
+			\end{minipage}
+		\end{centering}
+		\vspace{1.5cm} \\
+		\centering Mengetahui,\\ \vspace{0.5cm}	
+		Ketua Program Studi \\ \vspace{2.25cm} \vkajur\\
+	}}			
+\end{center}
+\cleardoublepage
+
+% Lembar Pernyataan
+\vspace*{4cm}
+{\Large\bf \centering PERNYATAAN\\} \vspace{1cm}
+\noindent
+Dengan ini saya yang bertandatangan di bawah ini menyatakan bahwa \MakeLowercase{\vstaINA} dengan judul:  \vspace{0.5cm}
+\begin{center}
+	{\large \bf \vjudulINA \\}
+\end{center}
+\vspace{0.75cm}
+adalah benar-benar karya saya sendiri, dan saya tidak melakukan penjiplakan atau pengutipan dengan cara-cara yang tidak sesuai dengan etika keilmuan yang berlaku dalam masyarakat keilmuan.
+			
+Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhkan kepada saya, apabila di kemudian hari ditemukan adanya pelanggaran terhadap etika keilmuan dalam karya saya, atau jika ada tuntutan formal atau non-formal dari pihak lain berkaitan dengan keaslian karya saya ini.\\
+\vspace{0.25cm}
+
+\begin{flushright}	
+	Dinyatakan di Bandung,\\
+	Tanggal \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.5cm}
+	\begin{tabular}{|p{1.75cm}|}
+		\hline
+		\\ Meterai \\ \\  
+		\hline
+	\end{tabular}\\
+	\vspace{0.5cm} 
+	\vlnama \\
+	NPM: \vnpm
+\end{flushright}
+ \cleardoublepage
+}{}
+
+% Abstrak & Abstract
+\ifthenelse{{\equal{\vmode}{sidang_akhir}}\or{\equal{\vmode}{final}}}{
+\ifdefempty{\vabstrakina}{}
+	  { \vspace*{4cm}
+		\begin{abstract}
+			%\noindent \normalsize{\onehalfspacing{\vabstrakina \vspace*{1cm}\\
+			\noindent \normalsize{\vabstrakina \vspace*{1cm}\\
+			{\bfseries Kata-kata kunci:\ } \vkunciina}
+		\end{abstract}
+  		\cleardoublepage
+	  }
+\ifdefempty{\vabstrakeng}{}
+	  { \def\abstractname{Abstract}
+		\vspace*{4cm}
+		\begin{abstract}
+			%\noindent \normalsize{\onehalfspacing{\vabstrakeng \vspace*{1cm}\\
+			\noindent \normalsize{\vabstrakeng \vspace*{1cm}\\
+			{\bfseries Keywords:\ } \vkuncieng}
+		\end{abstract}			
+ 		\cleardoublepage
+	  }
+}{}
+
+% Lembar persembahan
+\ifdefstring{\vmode}{final}{
+\ifdefempty{\vuntuk}{}
+	  { \vspace*{5cm}
+		\begin{quote}
+			\em \raggedleft \Large{\vuntuk} 
+		\end{quote}
+ 		\cleardoublepage
+	  }
+
+\pagestyle{plain}
+	
+% Kata pengantar
+\ifdefempty{\vprakata}{}
+	  {	\chapter*{Kata Pengantar}
+		\label{ch:prakata}
+		\addcontentsline{toc}{chapter}{Kata Pengantar}
+		\vprakata \vspace{0.25cm}
+		\begin{flushright}	
+			Bandung,\ \vbulan\ \vtahun \\ \vspace{1cm}
+			Penulis \\
+		\end{flushright}
+		\cleardoublepage		
+	  }
+}{}
+
+\ifthenelse{{\equal{\vmode}{kosong}}\or{\equal{\vmode}{cover}}}{}
+	{ \tableofcontents \newpage 	% Daftar isi
+	  \listoffigures \newpage 	% Daftar gambar
+	  \listoftables \newpage 		% Daftar tabel
+	}
+	\cleardoublepage
+}  
+
+%end depan.tex
+\clearpage
+\pagenumbering{arabic}
+
+\appmargin
+\appspacing
+\appline
+
+\pagestyle{fancy}
+
+\tampilbab{\vbab}
+\ifdefstring{\vbaba}{1}{\include{Bab/bab1}}{}
+\ifdefstring{\vbabb}{1}{\include{Bab/bab2}}{}
+\ifdefstring{\vbabc}{1}{\include{Bab/bab3}}{}
+\ifdefstring{\vbabd}{1}{\include{Bab/bab4}}{}
+\ifdefstring{\vbabe}{1}{\include{Bab/bab5}}{}
+\ifdefstring{\vbabf}{1}{\include{Bab/bab6}}{}
+\ifdefstring{\vbabg}{1}{\include{Bab/bab7}}{}
+\ifdefstring{\vbabh}{1}{\include{Bab/bab8}}{}
+\ifdefstring{\vbabi}{1}{\include{Bab/bab9}}{}
+
+\bibliographystyle{ieeetr}
+\bibliography{pustaka}
+
+\appendix
+\apptoc
+
+\tampillmp{\vlmp}
+\ifdefstring{\vlmpa}{1}{\include{Lampiran/lampA}}{}
+\ifdefstring{\vlmpb}{1}{\include{Lampiran/lampB}}{}
+\ifdefstring{\vlmpc}{1}{\include{Lampiran/lampC}}{}
+\ifdefstring{\vlmpd}{1}{\include{Lampiran/lampD}}{}
+\ifdefstring{\vlmpe}{1}{\include{Lampiran/lampE}}{}
+\ifdefstring{\vlmpf}{1}{\include{Lampiran/lampF}}{}
+\ifdefstring{\vlmpg}{1}{\include{Lampiran/lampG}}{}
+\ifdefstring{\vlmph}{1}{\include{Lampiran/lampH}}{}
+\ifdefstring{\vlmpi}{1}{\include{Lampiran/lampI}}{}
+
+\end{document}
