@@ -8,3 +8,4 @@ file `.gitignore` sesuai dengan bahasa yang Anda gunakan.
 Catatan:
 
 * **Jangan menaruh PDF e-book di sini**, karena berukuran besar dan beresiko terkena tuntuan HAKI
+* Ubahlah nama di berkas `LICENSE.md` dengan nama Anda (boleh juga ubah seluruh lisensinya sekaligus)
