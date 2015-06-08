@@ -1,14 +1,17 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v5 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v6 (13-04-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 %
-% Perubahan pada versi 5 (10-11-2013)
-% - Perbaikan pada memasukkan bab : tidak perlu menuliskan apapun untuk 
-%	memasukkan seluruh bab (bagian V)
-% - Perbaikan pada memasukkan lampiran : tidak perlu menuliskan apapun untuk
-%	memasukkan seluruh lampiran atau -1 jika tidak memasukkan apapun
+% Perubahan pada versi 6 (13-04-2015)
+% - Perubahan untuk data-data ``template" menjadi lebih generik dan menggunakan
+%	tanda << dan >>
 %
 % Perubahan pada versi sebelumnya
+% 	versi 5 (10-11-2013)
+% 	- Perbaikan pada memasukkan bab : tidak perlu menuliskan apapun untuk 
+%	  memasukkan seluruh bab (bagian V)
+% 	- Perbaikan pada memasukkan lampiran : tidak perlu menuliskan apapun untuk
+%	  memasukkan seluruh lampiran atau -1 jika tidak memasukkan apapun
 %	versi 4 (21-10-2012)
 %	- Data dosen dipindah ke dosen.tex agar jika ada perubahan/update data dosen
 %   mahasiswa tidak perlu mengubah data.tex
@@ -27,6 +30,7 @@
 % Masukkan ke dalam file ini, data-data yang diperlukan oleh template ini
 % Cara memasukkan data dijelaskan di setiap bagian
 % Data yang WAJIB dan HARUS diisi dengan baik dan benar adalah SELURUHNYA !!
+% Hilangkan tanda << dan >> jika anda menemukannya
 %=============================================================================
 %_____________________________________________________________________________
 %=============================================================================
@@ -139,14 +143,17 @@
 %			  ujian akhir skripsi/tugas akhir
 % - pembimbing: isi dengan pembimbing anda, lihat daftar dosen di file dosen.tex
 %				jika pembimbing hanya 1, kosongkan parameter kedua 
-%				(e.g. \pembimbing{\JND}{  } )
+%				(e.g. \pembimbing{\JND}{  } ) , \JND adalah kode dosen
 % - penguji : isi dengan para penguji anda, lihat daftar dosen di file dosen.tex
-%				(e.g. \penguji{\JHD}{\JCD} )
+%				(e.g. \penguji{\JHD}{\JCD} ) , \JND dan \JCD adalah kode dosen
+%
 %=============================================================================
-\namanpm{Lionov}{1997730020}
-\tanggal{1}{7}{2002}
-\pembimbing{\OSS}{\TAB}     %Lihat singkatan pembimbing anda di file dosen.tex
-\penguji{\NIS}{\CEN} 		%Lihat singkatan penguji anda di file dosen.tex
+\namanpm{<<Nama Lengkap>>}{<<10 digit NPM UNPAR>>}	%hilangkan tanda << & >>
+\tanggal{<<tanggal>>}{<<bulan>>}{<<tahun>>}			%hilangkan tanda << & >>
+\pembimbing{<<pembimbing utama/1>>}{<<pembimbing pendamping/2>>}     
+%Lihat singkatan pembimbing anda di file dosen.tex, hilangkan tanda << & >>
+\penguji{<<penguji 1>>}{<<penguji 2>>} 		
+%Lihat singkatan penguji anda di file dosen.tex, hilangkan tanda << & >>
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -160,11 +167,12 @@
 %			   bawahnya
 %			 - Gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 %			 - Judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
+%			 - Gunakan perintah \texorpdfstring{\\}{} untuk baris baru
 %=============================================================================
 
-\judulINA{Mengikuti Mayoritas: \texorpdfstring{\\}{} Sebuah Algoritma Baru Untuk Menghitung \texorpdfstring{\\}{} Median Trajectory}
+\judulINA{<<Judul Bahasa Indonesia>>}
 
-\judulENG{Following The Majority: \texorpdfstring{\\}{} a New Algorithm for Computing \texorpdfstring{\\}{} a Median Trajectory}
+\judulENG{<<Judul Bahasa Inggris>>}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -177,41 +185,9 @@
 %			 bawahnya
 %=============================================================================
 
-\abstrakINA{Kami mengembangkan dua algoritma baru untuk menghitung lintasan dari median set lintasan.
-	Algoritma pertama adalah $O(1.2108^{m} + m^{5}n^{5})$ terburuk waktu algoritma, dengan menggunakan konsep Jarak Fr\'{e}chet.
-	Algoritma kedua menggunakan metode penyangga.
-	Dalam situasi praktis, algoritma ini dapat menghitung median lintasan di $O((mn)^{2} \log mn)$ waktu.
-	Untuk kedua algoritma, $m$ adalah jumlah lintasan dalam mengatur dan lintasan masing-masing memiliki segmen $n$.
-	Kami membandingkan algoritma buffer dengan dua algoritma lain, salah satu dari mereka menggunakan konsep homotopy.
-	Hasil kami menunjukkan bahwa algoritma penyangga melakukan agak lebih baik.
+\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>> \lipsum[5]}
 
-	Kami mengembangkan dua algoritma baru untuk menghitung lintasan dari median set lintasan.
-	Algoritma pertama adalah $O(1.2108^{m} + m^{5}n^{5})$ terburuk waktu algoritma, dengan menggunakan konsep Jarak Fr\'{e}chet.
-	Algoritma kedua menggunakan metode penyangga.
-	Dalam situasi praktis, algoritma ini dapat menghitung median lintasan di $O((mn)^{2} \log mn)$ waktu.
-	Untuk kedua algoritma, $m$ adalah jumlah lintasan dalam mengatur dan lintasan masing-masing memiliki segmen $n$.
-	Kami membandingkan algoritma buffer dengan dua algoritma lain, salah satu dari mereka menggunakan konsep homotopy.
-	Hasil kami menunjukkan bahwa algoritma penyangga melakukan agak lebih baik.
-}
-
-\abstrakENG{We develop two new algorithms to compute a median trajectory from a
-	set of trajectories.
-	The first algorithm is an $O(1.2108^{m} + m^{5}n^{5})$ worst-case time algorithm, using the concept of Fr\'{e}chet Distance.
-	The second algorithm uses a buffer method.
-	In practical situations, this algorithm can compute the median trajectory in $O((mn)^{2} \log mn)$ time. 
-	For both algorithms, $m$ is the number of trajectories in the set and each trajectory has $n$ segments.
-	We compare the buffer algorithm with two other algorithms, one of them using the homotopy concept.
-	Our results suggest that the buffer algorithm performs somewhat better.
-	
-	We develop two new algorithms to compute a median trajectory from a
-	set of trajectories.
-	The first algorithm is an $O(1.2108^{m} + m^{5}n^{5})$ worst-case time algorithm, using the concept of Fr\'{e}chet Distance.
-	The second algorithm uses a buffer method.
-	In practical situations, this algorithm can compute the median trajectory in $O((mn)^{2} \log mn)$ time. 
-	For both algorithms, $m$ is the number of trajectories in the set and each trajectory has $n$ segments.
-	We compare the buffer algorithm with two other algorithms, one of them using the homotopy concept.
-	Our results suggest that the buffer algorithm performs somewhat better.
-} 
+\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>> \lipsum[5]} 
 
 %=============================================================================
 
@@ -223,9 +199,9 @@
 % - kunciINA: kata-kata kunci dalam bahasa indonesia
 % - kunciENG: keywords in english
 %=============================================================================
-\kunciINA{Lintasan, Homotopy, Fr\'{e}chet, Lintasan Median, Penyangga}
+\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
 
-\kunciENG{Trajectory, Homotopy, Fr\'{e}chet, Median Trajectory, Buffer}
+\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -234,7 +210,7 @@
 %=============================================================================
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 %=============================================================================
-\untuk{Dipersembahkan untuk diri sendiri }
+\untuk{<<kepada siapa anda mempersembahkan skripsi ini\ldots?>>}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -244,7 +220,7 @@
 % Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
 % kasih kepada yang telah membantu anda bla bla bla ....  
 %=============================================================================
-\prakata{\lipsum}
+\prakata{\lipsum[3]}
 %=============================================================================
 
 %_____________________________________________________________________________

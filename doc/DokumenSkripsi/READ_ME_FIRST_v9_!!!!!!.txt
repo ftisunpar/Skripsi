@@ -1,8 +1,8 @@
 
 Template Tugas Akhir/Skripsi FTIS 
 
-versi terbaru : v7 (01-03-2014)
-terdiri dari : main.tex versi 6, data.tex versi 5 dan dosen.tex versi 4
+versi terbaru : v9 (31-05-2015)
+terdiri dari : main.tex versi 8, data.tex versi 6 dan dosen.tex versi 4
 
 Silahkan (berjuang untuk) menggunakan template skripsi/tugas akhir FTIS yang dibuat oleh lionov.
 Pertanyaan terkait template dapat diajukan melalui email ke lionov@unpar.ac.id/lionov@gmail.com atau datang langsung ke ruang 9110.
@@ -37,6 +37,13 @@ Cara melakukan update apabila ada template dengan versi lebih baru
    - data.tex  	: jika anda melakukan penambahan/perubahan, simpan perubahan, overwrite dan lakukan perubahan di file yang baru
 3. Jalankan lagi pdflatex untuk mendapatkan dokumen yang terbaru
 /*==================================================== !!! NEW !!! ======================================================*/
+
+CATATAN versi 9: (13-04-2015)
+Perubahan main.tex ke versi 8 dan data.tex ke versi 6 untuk mengakomodasi kebutuhan akreditasi, dimana template sebaiknya
+tidak merujuk kepada pekerjaan seseorang tetapi dibuat lebih generik
+
+CATATAN versi 8: (27-05-2014)
+Perubahan main.tex ke versi 7
 
 CATATAN versi 7: (01-04-2014)
 Perubahan dosen.tex ke versi 4

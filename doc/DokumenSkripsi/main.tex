@@ -1,6 +1,6 @@
 %_____________________________________________________________________________
 %=============================================================================
-% main.tex v6 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% main.tex v8 (31-05-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 % 
 % Ini adalah file utama (main.tex), berisi perintah-perintah yang khusus 
 % dibuat untuk template ini
@@ -9,20 +9,29 @@
 %			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!!
 %
 % Jika ada tambahan perintah, dapat anda tuliskan di tempat yang telah disediakan 
-% di baris 295 pada file ini
+% di baris 310 pada file ini
 % Jika daftar tabel tidak digunakan, anda harus menghapus (beri komentar) secara
-% manual di baris 470
+% manual di baris 485
 %
 % Bug, kritik, saran: silahkan kirimkan via email ke lionov@unpar.ac.id
 %
-% Perubahan pada versi 6 (10-11-2013):
+% Perubahan pada versi 8 (31-05-2015):
+%	- penambahan default data untuk beberapa keterangan dan digunakan sebagai 
+%	  template dengan tanda << & >> . Data yang diubah defaultnya adalah: nama skripsi
+%	  nama prodi, beserta bahasa inggrisnya.
+%   - Keywords dan kata kunci di abstrak ditambahkan noindent + perbaikan lainnya
+%   - Perbaikan untuk halaman tidak kosong tanpa nomor halaman romawi
+%
+% Perubahan pada versi sebelumnya :
+%	versi 7 (27-05-2014)
+%	- penambahan perintah \raggedbottom untuk menghilangkan area kosong akibat 
+%	  penempatan gambar yang tidak sempurna
+%	versi 6 (10-11-2013)
 %	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
 %	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
 %	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
 %	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
 %	- Kurikulum 2013 : perubahan nama buku skripsi 
-%
-% Perubahan dari versi sebelumnya :
 %	versi 5 (21-10-2012)
 %	- halaman terakhir setiap bab tidak ada headernya jika kosong
 %	versi 4 (06-08-2012)
@@ -80,7 +89,6 @@
 \usepackage{setspace} %line spacing
 \usepackage{xstring} %manipulasi string
 \usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref} %\autoref, \phantomsection & link 
-
 \usepackage{emptypage}
 
 \let\abstractname\Abstrak
@@ -138,6 +146,10 @@
 \newcommand{\vkajurtif}{Jack Doe}
 
 \newcommand{\namanpm}[2]{
+	\renewcommand{\vstaINA}{<<SKRIPSI/TUGAS AKHIR>>}
+	\renewcommand{\vprodiINA}{<<MATEMATIKA/FISIKA/TEKNIK INFORMATIKA>>}
+	\renewcommand{\vstaENG}{<<FINAL PROJECT/UNDERGRADUATE THESIS>>}
+	\renewcommand{\vprodiENG}{<<MATHEMATICS/PHYSICS/INFORMATICS>>}
 	\renewcommand{\vnama}{\uppercase{#1}} \renewcommand{\vlnama}{#1} \hypersetup{pdfauthor={#2 - #1}}
 	\renewcommand{\vnpm}{#2} \hypersetup{pdfcreator={#2}} \StrChar{\vnpm}{6}[\vprodiN]
 	\ifdefstring{\vprodiN}{1}{
@@ -154,6 +166,7 @@
 \newcommand{\pembimbing}[2]{\renewcommand{\vpembu}{#1}\renewcommand{\vpembs}{#2}}
 \newcommand{\penguji}[2]{\renewcommand{\vpengi}{#1}\renewcommand{\vpengii}{#2}}
 \newcommand{\kajur}[3]{\renewcommand{\vkajurmat}{#1}\renewcommand{\vkajurfis}{#2}\renewcommand{\vkajurtif}{#3}}
+\renewcommand{\vbulan}{<<bulan>>}
 \newcommand{\tanggal}[3]{\renewcommand{\vtanggal}{#1}\renewcommand{\vtahun}{#3}
 	\newcommand{\vcbulan}{#2}
 	\ifdefstring{\vcbulan}{1}{\renewcommand{\vbulan}{Januari}}{}
@@ -304,6 +317,8 @@
 
 \begin{document}
 
+\raggedbottom
+
 \def\bibname{Daftar Referensi}
 \def\abstractname{Abstrak}
 
@@ -421,8 +436,9 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 	  { \vspace*{4cm}
 		\begin{abstract}
 			%\noindent \normalsize{\onehalfspacing{\vabstrakina \vspace*{1cm}\\
-			\noindent \normalsize{\vabstrakina \vspace*{1cm}\\
-			{\bfseries Kata-kata kunci:\ } \vkunciina}
+			\noindent \normalsize{\vabstrakina \vspace*{1cm} 
+			
+			{\noindent \bfseries Kata-kata kunci:\ } \vkunciina}
 		\end{abstract}
   		\cleardoublepage
 	  }
@@ -431,8 +447,9 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 		\vspace*{4cm}
 		\begin{abstract}
 			%\noindent \normalsize{\onehalfspacing{\vabstrakeng \vspace*{1cm}\\
-			\noindent \normalsize{\vabstrakeng \vspace*{1cm}\\
-			{\bfseries Keywords:\ } \vkuncieng}
+			\noindent \normalsize{\vabstrakeng \vspace*{1cm} 
+			
+			{\noindent \bfseries Keywords:\ } \vkuncieng}
 		\end{abstract}			
  		\cleardoublepage
 	  }
@@ -470,6 +487,7 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 	  \listoftables \newpage 		% Daftar tabel
 	}
 	\cleardoublepage
+%	\cleardoublepagewithpagenumber 
 }  
 
 %end depan.tex
