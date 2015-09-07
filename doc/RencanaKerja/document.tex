@@ -16,7 +16,7 @@
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
 \renewcommand{\thispagestyle}[1]{}
-\markright{\textbf{\textsc{AIF401 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2015/2016}}}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2015/2016}}}
 
 \onehalfspacing
  
@@ -28,7 +28,7 @@
 %tulis nama dan NPM anda di sini:
 \newcommand{\nama}{Lionov}
 \newcommand{\@npm}{1997730020}
-\newcommand{\@judultopik}{Median Trajectory} % Judul/topik anda
+\newcommand{\@judultopik}{Simulasi Kerumunan di Museum} % Judul/topik anda
 \newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
 \newcommand{\tanggal}{01/01/1900}
 \maketitle
@@ -38,7 +38,15 @@
 \section{Deskripsi}
 Tuliskan deskripsi dari topik skripsi yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
 
-\lipsum[1] %hapus ini
+Pada skripsi ini, akan dibuat sebuah perangkat lunak yang dapat menampilkan visualisasi dan simulasi kerumunan orang yang berkunjung ke sebuah museum. Dengan menggunakan perangkat lunak tersebut, pengelola museum dapat mengatur tempat peletakan objek sehingga tidak terjadi kerumunan yang terlalu padat.
+
+Dari berbagai macam teknik yang dapat digunakan untuk melakukan simulasi kerumunan, dipilih dua buah teknik yaitu teknik {\it flow tiles} dan {\it social force model (steering behaviour)}.
+
+Dst, dst, dst, \ldots\ldots\ldots 
+
+Perangkat lunak akan dibuat dengan bantuan {\it framework} OpenSteer. Sebagai studi kasus, museum yang digunakan untuk melakukan simulasi adalah Museum Geologi Bandung.
+
+Dst, dst, dst, \ldots\ldots\ldots 
 
 \section{Rumusan Masalah}
 Tuliskan rumusan dari masalah yang akan anda bahas pada skripsi ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan itemize seperti contoh di bagian Deskripsi Perangkat Lunak.
@@ -51,56 +59,62 @@ Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur 
 
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-	\item Pengguna dapat membangkitkan data-data {\it trajectory} secara otomatis sesuai dengan aturan yang telah ditentukan.
-	\item Pengguna dapat memasukkan secara manual data-data {\it trajectory}, baik melalui suatu {\it GUI (Graphical User Interface)} maupun melalui file teks. 
-	\item PL dapat menampilkan data-data yang sudah dimasukkan ataupun yang dibangkitkan secara otomatis melalui {\it GUI (Graphical User Interface)}.
-	\item Pengguna dapat memasukkan parameter-parameter yang digunakan oleh algoritma.
-	\item PL dapat menghitung dan menampilkan median trajectory secara otomatis, berdasarkan data-data trajectory yang diberikan.
-	\item PL dapat secara otomatis melakukan pembangkitan data untuk digunakan pada beberapa ratus tes kasus yang akan diuji. Untuk setiap tes kasus, PL dapat membuat laporan lengkap mengenai tes kasus tersebut.
+	\item Pengguna dapat melihat denah Musem Geologi Bandung dalam bidang dua dimensi. Sedangkan pengunjung direpresentasikan menggunakan lingkaran-lingkaran kecil (tidak menggunakan gambar manusia yang diambil dari atas)
+	\item Pengguna dapat memunculkan atau menghilangkan gambar {\it flow tiles} pada denah museum. 
+	\item Pengguna dapat mengatur jalannya simulasi: memulai(start) simulasi, menunda(pause) simulasi, melanjutkan(continue) simulasi, maupun menghentikan(stop) simulasi
+	\item Pengguna dapat mengatur banyaknya pengunjung di dalam museum, baik melalui perubahan frekuensi kedatangan pengunjung maupun menambahkan dan menghapus pengunjung satu-persatu secara manual.
+	\item Posisi kamera dapat diubah (pergerakan di bidang tiga dimensi) sehingga pengguna dapat melihat simulasi di museum dari berbagai arah. 
+	\item Posisi kamera dapat diubah untuk emngikuti perjalanan seorang pengunjung di dalam 
+	\item Pengguna dapat memilih apakah akan menggunakan teknik {\it flow tiles} atau tidak pada saat simulasi berlangsung
+	\item Jenis {\it flow tiles} yang digunakan dapat diubah-ubah pada saat simulasi sedang berlangsung
+		
 \end{itemize}
+
+\section{Detail Pengerjaan Skripsi}
+Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
+
+Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
+	\begin{enumerate}
+		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll)
+		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.
+		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}
+		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer
+		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung
+		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)
+		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer 
+		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif
+		\item Menulis dokumen skripsi
+	\end{enumerate}
 
 \section{Rencana Kerja}
 Tuliskan rencana anda untuk menyelesaikan skripsi. Rencana kerja dibagi menjadi dua bagian yaitu yang akan dilakukan pada saat mengambil kuliah AIF401 Skripsi 1 dan pada saat mengambil kuliah AIF402 Skripsi 2. Perhatikan contoh berikut ini :
 
-Rencana kerja untuk menyelesaikan skripsi ini:
-\begin{itemize}
-	\item Pada saat mengambil kuliah AIF401 Skripsi 1
-	\begin{enumerate}
-		\item Melakukan studi literatur tentang algoritma-algoritma yang berkaitan dengan pemrosesan data trajectory.
-		\item Mempelajari algoritma untuk menghitung Frechet Distance
-		\item Mempelajari fitur-fitur bahasa Java untuk membuat Graphical User Interface
-		\item Merancang algoritma/langkah-langkah untuk membuat secara otomatis pembangkit data trajectory
-	\end{enumerate}
-	\item Pada saat mengambil kuliah AIF401 Skripsi 2
-	\begin{enumerate}
-		\item Merancang dan mengimplementasikan algoritma untuk mencari Median Trajectory.
-		\item Mengimplementasikan pembangkit data trajectory 
-		\item Melakukan pengujian dan eksperimen
-		\item Membuat dokumentasi skripsi
-	\end{enumerate}
-\end{itemize}
 
-\section{Isi {\it Progress Report} Skripsi 1}
-Isi dari {\it Progress Report} Skripsi 1 yang akan diselesaikan dan dilaporkan ke pembimbing paling lambat 2 minggu sebelum tenggat waktu yang ditetapkan koordinator adalah :
-\begin{enumerate}
-	\item Algoritma/langkah-langkah untuk membuat pembangkit otomatis data trajectory
-	\item Hasil eksperimen penggunaan fitur-fitur Graphical User Interface pada bahasa Java
-	\item Algoritma dan contoh perhitungan untuk kasus menghitung jarak dengan Frechet Distance
-	\item \ldots (to be continued)
-\end{enumerate}
-Estimasi persentase penyelesaian skripsi sampai dengan {\it Progress Report} Skripsi 1 adalah : 99\%
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | l |}
+    \hline
+    1*  & 2*(\%) & 3*(\%) & 4*(\%) &5*\\ \hline \hline
+    1   & 5  & 5  &  &  \\ \hline
+    2   & 5 & 5  &   & \\ \hline
+    3   & 10  & 7  & 3 & {\footnotesize sebagian kecil teknik {\it flow tiles} di S2}  \\ \hline
+    4   & 15  & 10  &  5 & {\footnotesize teknik lanjut OOP di C++ di S2} \\ \hline
+    5   & 20  & 5  & 15 & {\footnotesize perancangan awal SFM, pathway dan waypoint di S1} \\ \hline
+    6   & 5 &   & 5  & \\ \hline
+    7   & 20  & 5  & 15 &  {\footnotesize implementasi denah dan rancangan awal SFM di S1}\\ \hline
+    8   & 5  &   &  5  & \\ \hline
+    9   & 15  & 3  & 12  & {\footnotesize sebagian bab 1 dan 2, serta bagian awal analisis di S1}\\ \hline
+    Total  & 100  & 40  & 60 &  \\ \hline
+                          \end{tabular}
+\end{center}
 
-\section{Pernyataan Khusus}
-Berlatar belakang perihal kejujuran serta keterbasan jumlah dosen, saya menyatakan akan mematuhi aturan-aturan khusus berikut:
-\begin{enumerate}
-	\item Skripsi adalah hasil karya saya sendiri. Peran teman / orang lain adalah untuk membantu pemahaman, tetapi tidak dalam konten Skripsi.
-	\item Saya menetapkan batasan yang jelas antara konten saya, dengan buatan orang lain (termasuk kode yang diambil dari {\it open source project})
-	\item Pengambilan kedua hanya akan dilakukan hanya jika sudah memenuhi minimal 90\% dari target.
-\end{enumerate}
-Saya bersedia mematuhi peraturan di atas, dan bersedia menerima sanksi pembatalan pengambilan Skripsi dengan dosen pembimbing terkait jika terbukti melanggar. Peraturan ini berlaku pada Skripsi 1 dan 2.
+Keterangan (*)\\
+1 : Bagian pengerjaan Skripsi (nomor disesuaikan dengan detail pengerjaan di bagian 5)\\
+2 : Persentase total \\
+3 : Persentase yang akan diselesaikan di Skripsi 1 \\
+4 : Persentase yang akan diselesaikan di Skripsi 2 \\
+5 : Penjelasan singkat apa yang dilakukan di S1 (Skripsi 1) atau S2 (skripsi 2)
 
-\vspace{1.5cm}
-
+\vspace{1cm}
 \centering Bandung, \tanggal\\
 \vspace{2cm} \nama \\ 
 \vspace{1cm}
@@ -122,6 +136,6 @@ Menyetujui, \\
 % \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
 \vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
 }
-
+`
 \end{document}
 
