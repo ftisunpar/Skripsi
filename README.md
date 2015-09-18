@@ -19,14 +19,17 @@ Bagian ini berisi peraturan yang diberikan oleh koordinator skripsi secara tidak
 
 #### Rencana Kerja
 
-* Mahasiswa wajib menyusun rencana kerja (sesuai template) bersama pembimbing, dan menandatanganinya sebelum ditandatangan pembimbing.
+* Mahasiswa wajib menyusun rencana kerja (sesuai [template](https://github.com/pascalalfadian/Skripsi/tree/master/doc/RencanaKerja)) bersama saya, dan menandatanganinya sebelum ditandatangan saya.
 
-#### Presentasi
+#### Penilaian
 
-* Sebelum presentasi, mahasiswa wajib mengumpulkan dokumen berikut:
-    - Dokumen Skripsi (bab 1, 2, 3), dan
-    - Progress Report (sesuai template)
-* Progress Report tetap harus dikumpulkan walaupun tidak presentasi
+* UTS
+    - Progress Report (sesuai [template](https://github.com/pascalalfadian/Skripsi/tree/master/doc/ProgressReport)) di github (syarat saya)
+    - PDF Dokumen Skripsi (bab 1 dan 2) di github (syarat saya)
+* UAS
+    - Progress Report (sesuai [template](https://github.com/pascalalfadian/Skripsi/tree/master/doc/ProgressReport)) di github (syarat koordinator)
+    - Dokumen Skripsi (bab 1, 2, 3) di github (syarat saya)
+    - _Note_: Progress Report tetap harus dikumpulkan walaupun tidak maju presentasi
 
 ### Skripsi 2
 
