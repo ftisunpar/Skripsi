@@ -21,6 +21,8 @@ Bagian ini berisi peraturan yang diberikan oleh koordinator skripsi secara tidak
 
 ##### Usulan Topik Sendiri
 
+Langkah-langkah:
+
 1. Mahasiswa menghubungi dosen pembimbing yang dianggap cocok untuk membimbing topik tersebut, atau berkonsultasi dengan Koordinator Skripsi untuk menentukan pembimbing.
 2. Setelah ada dosen yang bersedia, mahasiswa dan calon dosen pembimbing bersama-sama menyusun presentasi mengenai topik tersebut.
 3. Calon dosen pembimbing melakukan presentasi usulan topik pada saat rapat program studi yang akan diadakan pada tanggal `17 November 2015 pukul 11.00`
@@ -30,11 +32,17 @@ Bagian ini berisi peraturan yang diberikan oleh koordinator skripsi secara tidak
 
 ##### Topik Dari Program Studi
 
+Langkah-langkah:
+
 1. Mahasiswa memilih topik skripsi yang diumumkan oleh Koordinator Skripsi. 
 2. Mahasiswa menghubungi calon dosen pembimbing untuk mendiskusikan topik yang dipilih.
 3. Jika calon dosen pembimbing sudah menyetujui, mahasiswa mengisi formulir pendaftaran skripsi.
 4. Tata cara pendaftaran skripsi dapat dilihat di dokumen Form "Pendaftaran Skripsi" (Ambil di eLearning kuliah Skripsi 1 atau Skripsi 2 di bagian `Topik Skripsi Genap 40`)
 5. Batas akhir pendaftaran skripsi adalah pada tanggal `6 Januari 2016 pukul 11.00`, pada saat itu mahasiswa harus sudah memiliki topik skripsi!
+
+Catatan:
+
+* Topik yang diberi tanda bintang (*) adalah topik mudah, dan hanya dapat diambil oleh mahasiswa yang telah menempuh minimal 10 semester atau IPK <= 2.50. Nilai maksimal adalah B untuk Skripsi 1 dan 2.
 
 #### Rencana Kerja
 
