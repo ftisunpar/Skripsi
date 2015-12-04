@@ -58,6 +58,14 @@ Catatan:
     - Dokumen Skripsi (bab 1, 2, 3) di github (syarat Pascal)
     - _Note_: Progress Report tetap harus dikumpulkan walaupun tidak maju presentasi
 
+#### Review (Presentasi)
+
+* Dilakukan pada masa UAS
+* Waktu Review maksimal 40 menit, terdiri dari
+    - Maksimum 25 menit untuk presentasi
+    - Sisanya untuk reviewer memberikan reviewnya
+* Capaian pengerjaan (%) diisi oleh reviewer
+
 ### Skripsi 2
 
 #### Sidang
