@@ -75,6 +75,13 @@ Catatan:
     - Dokumen Skripsi
     - Progress Report (sesuai template)
 * Progress Report tetap harus dikumpulkan walaupun tidak presentasi
+* Waktu Sidang maksimal 120 menit, terdiri dari:
+    - Maksimum 40 menit untuk presentasi + demo
+    - Sisanya untuk tanya jawab dan penilaian tertutup
+* Mahasiswa harus mempresentasikan bagian kode programnya
+* Seusai sidang, mahasiswa berhak mengetahui:
+    - Jumlah nilai sementara (di luar nilai kedisiplinan)
+    - Nilai kedisiplinan diberikan kemudian oleh koordinator
 
 ### Perpanjangan Skripsi (1 & 2)
 
