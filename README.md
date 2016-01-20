@@ -70,7 +70,7 @@ Catatan:
 
 #### Sidang
 
-* Mulai Januari 2016, dalam satu semester, sidang skipsi 2 diperbolehkan sebanyak maksimal 1x per mahasiswa.
+* Dalam satu semester, sidang skipsi 2 hanya diperbolehkan sebanyak 1x per mahasiswa.
 * Sebelum presentasi, mahasiswa wajib mengumpulkan dokumen berikut:
     - Dokumen Skripsi
     - Progress Report (sesuai template)
