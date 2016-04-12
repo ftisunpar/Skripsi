@@ -42,7 +42,7 @@ Langkah-langkah:
 
 Catatan:
 
-* Topik yang diberi tanda bintang (*) adalah topik mudah, dan hanya dapat diambil oleh mahasiswa yang telah menempuh minimal 10 semester atau IPK <= 2.50. Nilai maksimal adalah B untuk Skripsi 1 dan 2.
+* Topik yang diberi tanda bintang (*) adalah topik mudah, dan hanya dapat diambil oleh mahasiswa yang telah menempuh minimal 10 semester atau IPK <= 2.30. Nilai maksimal adalah B untuk Skripsi 1 dan 2.
 
 #### Rencana Kerja
 
