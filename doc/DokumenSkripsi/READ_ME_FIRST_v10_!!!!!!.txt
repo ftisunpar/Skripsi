@@ -1,15 +1,16 @@
 
 Template Tugas Akhir/Skripsi FTIS 
 
-versi terbaru : v9 (31-05-2015)
-terdiri dari : main.tex versi 8, data.tex versi 6 dan dosen.tex versi 4
+versi terbaru : v10 (30-11-2015)
+terdiri dari : main.tex versi 9, data.tex versi 7 dan dosen.tex versi 5
 
 Silahkan (berjuang untuk) menggunakan template skripsi/tugas akhir FTIS yang dibuat oleh lionov.
-Pertanyaan terkait template dapat diajukan melalui email ke lionov@unpar.ac.id/lionov@gmail.com atau datang langsung ke ruang 9110.
+Pertanyaan terkait template dapat diajukan melalui email ke lionov@unpar.ac.id/lionov@gmail.com 
+atau datang langsung ke ruang 4.21, BuysBallotGebouw, Universiteit Utrecht, Princetonplein 5 3584CC Utrecht, Belanda.
 PERTANYAAN TERKAIT LATEX DAPAT DIAJUKAN KEPADA PEMBIMBING MASING-MASING ATAU MENCARI TAHU SENDIRI JAWABANNYA MELALUI INTERNET.
 
 Perhatian !! :
-- Skripsi yang tertulis di tempalte ini adalah CONTOH, sekali lagi : HANYA CONTOH !!!!!, jadi jangan mengikuti cara penulisan atau
+- Skripsi yang tertulis di template ini adalah CONTOH, sekali lagi : HANYA CONTOH !!!!!, jadi jangan mengikuti cara penulisan atau
   cara penempatan lampiran (mis: B untuk source code program). Tanyakan kepada pembimbing masing-masing
 - File main.tex SANGAT dianjurkan untuk TIDAK DIUBAH, kecuali anda tahu persis apa yang anda lakukan.
   File tersebut adalah file tex utama yang harus anda compile menggunakan pdflatex, agar menghasilkan dokumen pdf yang sesuai.
@@ -25,7 +26,8 @@ Cara menggunakan :
    Jangan melakukan perubahan pada nama file tersebut dan biarkan bab yang tidak dipakai.
 3. Jika ada file gambar (jpg, bmp, pdf, png, dll) dapat disimpan di direktori "Gambar"
 4. Tuliskan isi dari lampiran di dalam file lampiran (lampA.tex, lampB.tex, dst) yang telah disediakan di dalam direktori "Lampiran"
-5. File pdf dapat dihasilkan dengan melakukan kompilasi (menggunakan pdflatex) pada FILE UTAMA: main.tex
+5. File pdf dapat dihasilkan dengan melakukan kompilasi (menggunakan pdflatex) pada FILE UTAMA: main.tex (atau tergantung IDE yang
+	digunakan, pada beberapa kasus, kompilasi dapat dilakukan di file mana saja untuk menghasilkan file PDF)
 
 /*==================================================== !!! NEW !!! ======================================================*/
 Cara melakukan update apabila ada template dengan versi lebih baru
@@ -37,6 +39,10 @@ Cara melakukan update apabila ada template dengan versi lebih baru
    - data.tex  	: jika anda melakukan penambahan/perubahan, simpan perubahan, overwrite dan lakukan perubahan di file yang baru
 3. Jalankan lagi pdflatex untuk mendapatkan dokumen yang terbaru
 /*==================================================== !!! NEW !!! ======================================================*/
+
+CATATAN versi 10: (30-11-2015)
+Perubahan main.tex ke versi 9, data.tex ke versi 7 dan dosen.tex ke versi 5, update data dosen dan sedapatnya membuat mahasiswa
+tidak melakukan perubahan di main.tex
 
 CATATAN versi 9: (13-04-2015)
 Perubahan main.tex ke versi 8 dan data.tex ke versi 6 untuk mengakomodasi kebutuhan akreditasi, dimana template sebaiknya

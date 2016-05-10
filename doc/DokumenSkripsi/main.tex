@@ -1,6 +1,6 @@
 %_____________________________________________________________________________
 %=============================================================================
-% main.tex v8 (31-05-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% main.tex v9 (30-11-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 % 
 % Ini adalah file utama (main.tex), berisi perintah-perintah yang khusus 
 % dibuat untuk template ini
@@ -8,56 +8,15 @@
 % 			JANGAN MENGUBAH APAPUN DI DALAM FILE INI,
 %			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!!
 %
-% Jika ada tambahan perintah, dapat anda tuliskan di tempat yang telah disediakan 
-% di baris 310 pada file ini
-% Jika daftar tabel tidak digunakan, anda harus menghapus (beri komentar) secara
-% manual di baris 485
+% Perubahan pada versi 9 (30-11-2015):
+%	- bagian untuk menambahkan perintah sendiri dipindahkan ke data.tex
+%	- bagian untuk mengatur kemunculan daftar gambar dan daftar tabel, dipindahkan
+%	  ke data.tex
+%	- penambahan bagian untuk mengatur perbedaan pdfTeX, masalah hfill dgn hfil
+%	- bagian pengesahan diatur agar lebih rapi 
 %
-% Bug, kritik, saran: silahkan kirimkan via email ke lionov@unpar.ac.id
-%
-% Perubahan pada versi 8 (31-05-2015):
-%	- penambahan default data untuk beberapa keterangan dan digunakan sebagai 
-%	  template dengan tanda << & >> . Data yang diubah defaultnya adalah: nama skripsi
-%	  nama prodi, beserta bahasa inggrisnya.
-%   - Keywords dan kata kunci di abstrak ditambahkan noindent + perbaikan lainnya
-%   - Perbaikan untuk halaman tidak kosong tanpa nomor halaman romawi
-%
-% Perubahan pada versi sebelumnya :
-%	versi 7 (27-05-2014)
-%	- penambahan perintah \raggedbottom untuk menghilangkan area kosong akibat 
-%	  penempatan gambar yang tidak sempurna
-%	versi 6 (10-11-2013)
-%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
-%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
-%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
-%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
-%	- Kurikulum 2013 : perubahan nama buku skripsi 
-%	versi 5 (21-10-2012)
-%	- halaman terakhir setiap bab tidak ada headernya jika kosong
-%	versi 4 (06-08-2012)
-% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
-% 	- menambahkan keterangan di lampiran untuk kode program 
-% 	- ukuran font dapat diubah langsung di tiap lampiran
-% 	versi 3 (09-07-2012): 
-%	- Tidak ada di file ini
-% 	versi 2 :
-% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
-% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
-% 	- Spasi pada buku dokumen final adalah onehalfspacing
-%
-% to do : - hilangkan secara otomatis daftar tabel/gambar jika tidak digunakan
-%         - (IT) aturan penulisan algoritma untuk IT (pakai algo.sty ?)
-%=============================================================================
-
-%=============================================================================
-% setup.tex v2 (08-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan perintah untuk judulINA dan judulENG
-% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
-%=============================================================================
-% depan.tex v2 (09-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan halaman depan dalam bahasa inggris
+% Perubahan pada versi sebelumnya dapat dilihat di bagian akhir file ini
+%_____________________________________________________________________________
 %=============================================================================
 
 %setup.tex
@@ -89,7 +48,7 @@
 \usepackage{setspace} %line spacing
 \usepackage{xstring} %manipulasi string
 \usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref} %\autoref, \phantomsection & link 
-\usepackage{emptypage}
+\usepackage{emptypage} %halaman kosong antar bab
 
 \let\abstractname\Abstrak
 
@@ -97,7 +56,12 @@
 
 \renewcommand{\cftchapfont}{\scshape \bfseries}
 
-\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}
+\newcommand{\vdierror}{}
+\newcommand{\daftarIsiError}[1]{\renewcommand{\vdierror}{#1}}
+
+\ifdefempty{\vdierror}
+	{\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}}
+	{\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries\MakeUppercase}}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\cftloftitlefont}{\hfill\Large\bfseries\MakeUppercase}
 \renewcommand{\cftafterloftitle}{\hfill}
@@ -117,7 +81,6 @@
 	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape Lampiran\  }}%
 	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{2.75cm}}
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape}}%	
-
 }
 
 \newcommand{\vnama}{Jane Doe}
@@ -144,6 +107,8 @@
 \newcommand{\vkajurmat}{Jack Doe}
 \newcommand{\vkajurfis}{Jack Doe}
 \newcommand{\vkajurtif}{Jack Doe}
+\newcommand{\vtabel}{}
+\newcommand{\vgambar}{}
 
 \newcommand{\namanpm}[2]{
 	\renewcommand{\vstaINA}{<<SKRIPSI/TUGAS AKHIR>>}
@@ -160,7 +125,8 @@
 		\renewcommand{\vstaINA}{TUGAS AKHIR} \renewcommand{\vstaENG}{FINAL PROJECT} \renewcommand{\vkajur}{\vkajurfis}}{}
 	\ifdefstring{\vprodiN}{3}{
 		\renewcommand{\vprodiINA}{TEKNIK INFORMATIKA} \renewcommand{\vprodiENG}{INFORMATICS} 
-		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{UNDERGRADUATE THESIS} \renewcommand{\vkajur}{\vkajurtif}}{}}
+		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{UNDERGRADUATE THESIS} \renewcommand{\vkajur}{\vkajurtif}}{}
+	}
 
 %\newcommand{\judul}[1]{\renewcommand{\vjudul}{\uppercase{#1}}\hypersetup{pdftitle={#1}, pdfsubject={#1}}}
 \newcommand{\pembimbing}[2]{\renewcommand{\vpembu}{#1}\renewcommand{\vpembs}{#2}}
@@ -194,6 +160,9 @@
 \newcommand{\mode}[1]{\renewcommand{\vmode}{#1}}
 \newcommand{\linespacing}[1]{\renewcommand{\vspacing}{#1}}
 \newcommand{\linenumber}[1]{\renewcommand{\vlineno}{#1}}
+
+\newcommand{\gambar}[1]{\renewcommand{\vgambar}{#1}}
+\newcommand{\tabel}[1]{\renewcommand{\vtabel}{#1}}
 
 \newcommand{\bab}[1]{\newcommand{\vbab}{#1}}
 \newcommand{\lampiran}[1]{\renewcommand{\vlmp}{#1}}
@@ -285,7 +254,7 @@
 	\if@twoside \ifodd\c@page
 	\else
 		\hbox{}
-		\vspace{\fill}
+		\vspace{\fill} 
 		\thispagestyle{empty}
 		\newpage
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
@@ -305,11 +274,6 @@
 \lstset{basicstyle=\tiny, commentstyle=\color{blue}}
 \lstset{frame=leftline, tabsize=4, breaklines=true}
 
-%=============================================================================
-
-%tambahkan perintah yang anda butuhkan di sini :
-
-%=============================================================================
 %end setup.tex
 
 \include{data}
@@ -376,27 +340,27 @@
 			Bandung, \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.25cm} Menyetujui,\\
 			\vspace{0.75cm}
 			\ifdefempty{\vpembs}
-					{\centering Pembimbing Tunggal\\ \vspace{2cm} \vpembu\\}
+					{\centering Pembimbing Tunggal\\ \vspace{2.25cm} \vpembu\\}
 					{ 	\begin{minipage}[b]{0.46\linewidth}
-							\centering Pembimbing Utama \\ \vspace{2.25cm} \vpembu \\
+							\centering Pembimbing Utama \\ \vspace{2.5cm} \vpembu \\
 						\end{minipage} \hspace{0.5cm}
 						\begin{minipage}[b]{0.46\linewidth}
-							\centering Pembimbing Pendamping \\	\vspace{2.25cm} \vpembs \\
+							\centering Pembimbing Pendamping \\	\vspace{2.5cm} \vpembs \\
 						\end{minipage}	
 					}
 		\end{centering}
-		\vspace{1.25cm}
+		\vspace{1.5cm}
 		\begin{centering}	
 			\begin{minipage}[b]{0.46\linewidth}
-				\centering Ketua Tim Penguji \\ \vspace{2.25cm} \vpengi \\
+				\centering Ketua Tim Penguji \\ \vspace{2.5cm} \vpengi \\
 			\end{minipage} \hspace{0.5cm}
 			\begin{minipage}[b]{0.46\linewidth}
-				\centering Anggota Tim Penguji \\ \vspace{2.25cm} \vpengii 
+				\centering Anggota Tim Penguji \\ \vspace{2.5cm} \vpengii 
 			\end{minipage}
 		\end{centering}
 		\vspace{1.5cm} \\
 		\centering Mengetahui,\\ \vspace{0.5cm}	
-		Ketua Program Studi \\ \vspace{2.25cm} \vkajur\\
+		Ketua Program Studi \\ \vspace{2.5cm} \vkajur\\
 	}}			
 \end{center}
 \cleardoublepage
@@ -459,14 +423,14 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 \ifdefstring{\vmode}{final}{
 \ifdefempty{\vuntuk}{}
 	  { \vspace*{5cm}
-		\begin{quote}
+		\begin{quote} 
 			\em \raggedleft \Large{\vuntuk} 
 		\end{quote}
  		\cleardoublepage
 	  }
 
 \pagestyle{plain}
-	
+	 
 % Kata pengantar
 \ifdefempty{\vprakata}{}
 	  {	\chapter*{Kata Pengantar}
@@ -483,8 +447,8 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 
 \ifthenelse{{\equal{\vmode}{kosong}}\or{\equal{\vmode}{cover}}}{}
 	{ \tableofcontents \newpage 	% Daftar isi
-	  \listoffigures \newpage 	% Daftar gambar
-	  \listoftables \newpage 		% Daftar tabel
+	  \ifdefempty{\vgambar}{\listoffigures \newpage}{} 	% Daftar gambar
+	  \ifdefempty{\vtabel}{\listoftables \newpage}{} 		% Daftar tabel
 	}
 	\cleardoublepage
 %	\cleardoublepagewithpagenumber 
@@ -529,3 +493,46 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 \ifdefstring{\vlmpi}{1}{\include{Lampiran/lampI}}{}
 
 \end{document}
+
+%=============================================================================
+% Perubahan pada versi 8 (31-05-2015): 
+%	- penambahan default data untuk beberapa keterangan dan digunakan sebagai 
+%	  template dengan tanda << & >> . Data yang diubah defaultnya adalah: nama skripsi
+%	  nama prodi, beserta bahasa inggrisnya.
+%   - Keywords dan kata kunci di abstrak ditambahkan noindent + perbaikan lainnya
+%   - Perbaikan untuk halaman tidak kosong tanpa nomor halaman romawi
+% Perubahan pada versi 7 (27-05-2014)
+%	- penambahan perintah \raggedbottom untuk menghilangkan area kosong akibat 
+%	  penempatan gambar yang tidak sempurna
+% Perubahan pada versi 6 (10-11-2013)
+%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
+%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
+%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
+%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
+%	- Kurikulum 2013 : perubahan nama buku skripsi 
+% Perubahan pada versi 5 (21-10-2012)
+%	- halaman terakhir setiap bab tidak ada headernya jika kosong
+% Perubahan pada versi 4 (06-08-2012)
+% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
+% 	- menambahkan keterangan di lampiran untuk kode program 
+% 	- ukuran font dapat diubah langsung di tiap lampiran
+% Perubahan pada versi 3 (09-07-2012): 
+%	- Tidak ada perubahan di file ini
+% Perubahan pada versi 2 (08-07-2012):
+% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
+% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
+% 	- Spasi pada buku dokumen final adalah onehalfspacing
+% Versi 1 (08-11-2011)
+%=============================================================================
+%=============================================================================
+% depan.tex v2 (09-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan halaman depan dalam bahasa inggris
+% Versi 1 (08-11-2011)
+%=============================================================================
+% setup.tex v2 (08-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan perintah untuk judulINA dan judulENG
+% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
+% Versi 1 (08-11-2011)
+%=============================================================================
