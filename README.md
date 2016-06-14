@@ -25,10 +25,10 @@ Langkah-langkah:
 
 1. Mahasiswa menghubungi dosen pembimbing yang dianggap cocok untuk membimbing topik tersebut, atau berkonsultasi dengan Koordinator Skripsi untuk menentukan pembimbing.
 2. Setelah ada dosen yang bersedia, mahasiswa dan calon dosen pembimbing bersama-sama menyusun presentasi mengenai topik tersebut.
-3. Calon dosen pembimbing melakukan presentasi usulan topik pada saat rapat program studi yang akan diadakan pada tanggal `17 November 2015 pukul 11.00`
+3. Calon dosen pembimbing melakukan presentasi usulan topik pada saat rapat program studi.
 4. Jika usulan topik disetujui oleh rapat program studi, maka topik skripsi tersebut akan diberi Kode Topik Skripsi yang dapat digunakan untuk mengisi Formulir Pendaftaran Skripsi.
-5. Tata cara pendaftaran skripsi dapat dilihat di dokumen Form "Pendaftaran Skripsi" (Ambil di eLearning kuliah Skripsi 1 atau Skripsi 2 di bagian `Topik Skripsi Genap 40`)
-6. Batas akhir pendaftaran skripsi adalah pada tanggal `6 Januari 2016 pukul 11.00`, pada saat itu mahasiswa harus sudah memiliki topik skripsi!
+5. Tata cara pendaftaran skripsi dapat dilihat di dokumen Form "Pendaftaran Skripsi" (diberikan koordinator skripsi).
+6. Pastikan untuk mengumpulkan form skripsi ke koordinator sebelum batas akhir pendaftaran.
 
 ##### Topik Dari Program Studi
 
@@ -37,8 +37,8 @@ Langkah-langkah:
 1. Mahasiswa memilih topik skripsi yang diumumkan oleh Koordinator Skripsi. 
 2. Mahasiswa menghubungi calon dosen pembimbing untuk mendiskusikan topik yang dipilih.
 3. Jika calon dosen pembimbing sudah menyetujui, mahasiswa mengisi formulir pendaftaran skripsi.
-4. Tata cara pendaftaran skripsi dapat dilihat di dokumen Form "Pendaftaran Skripsi" (Ambil di eLearning kuliah Skripsi 1 atau Skripsi 2 di bagian `Topik Skripsi Genap 40`)
-5. Batas akhir pendaftaran skripsi adalah pada tanggal `6 Januari 2016 pukul 11.00`, pada saat itu mahasiswa harus sudah memiliki topik skripsi!
+4. Tata cara pendaftaran skripsi dapat dilihat di dokumen Form "Pendaftaran Skripsi" (diberikan koordinator skripsi).
+5. Pastikan untuk mengumpulkan form skripsi ke koordinator sebelum batas akhir pendaftaran.
 
 Catatan:
 
