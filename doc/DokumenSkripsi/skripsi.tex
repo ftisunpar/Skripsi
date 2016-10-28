@@ -1,27 +1,35 @@
 %_____________________________________________________________________________
 %=============================================================================
-% main.tex v9 (30-11-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% main.tex v10 (02-10-2016) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR 
 % 
 % Ini adalah file utama (main.tex), berisi perintah-perintah yang khusus 
 % dibuat untuk template ini
 %
-% 			JANGAN MENGUBAH APAPUN DI DALAM FILE INI,
-%			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!!
-%
-% Perubahan pada versi 9 (30-11-2015):
-%	- bagian untuk menambahkan perintah sendiri dipindahkan ke data.tex
-%	- bagian untuk mengatur kemunculan daftar gambar dan daftar tabel, dipindahkan
-%	  ke data.tex
-%	- penambahan bagian untuk mengatur perbedaan pdfTeX, masalah hfill dgn hfil
-%	- bagian pengesahan diatur agar lebih rapi 
-%
-% Perubahan pada versi sebelumnya dapat dilihat di bagian akhir file ini
+% 			JANGAN MENGUBAH APAPUN DI DALAM FILE INI, 
+%			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!! 
+% 
+% Perubahan pada versi 10 (02-10-2016):
+%	- Perubahan nama file dari main.tex menjadi skripsi.tex
+%	- Perubahan style bibliography dari "ieeetr" menjadi "compj" yang digunakan
+%     di jurnal "The Computer Journal" yg diterbitkan oleh Oxford University 
+%     Press/British Computer Society
+%	- Penempatan gambar otomatis di folder "Gambar", jadi tidak perlu menuliskan
+%	  nama folder lagi (\includegraphics{Gambar/tes} --> \includegraphics{tes})
+%	- Perubahan font menjadi latin modern yg sdh banyak digunakan di jurnal2 intl
+%   - Perbaikan kecil: jeda antara ttd pembimbing dan penguji
+%	- Pembimbing Tunggal --> Pembimbing (karena sdh jelas tunggal 
+%	- Penggunaan kantlipsum (output bhs inggris) sebagai pengganti lipsum
+%	- \onespacing otomatis untuk buku skripsi final, untuk buku sidang tetap 
+%	  \onehalfspacing
+%	- Perbaikan hfill dan hfil yang masih menjadi masalah, bagian itu dipindahkan
+%	  ke dekat deklarasi Daftar Isi
 %_____________________________________________________________________________
 %=============================================================================
 
 %setup.tex
-\documentclass[11pt,a4paper,twoside,openright,notitlepage]{report} 
+\documentclass[11pt,a4paper,twoside,openright,notitlepage]{report}  
 
+\usepackage{lmodern} %font latin modern 
 \usepackage[bahasa]{babel} %bahasa indonesia
 \usepackage[T1]{fontenc}  %encoding
 % \usepackage{mathptmx}
@@ -30,10 +38,10 @@
 % \usepackage{fouriernc} 
 \usepackage{abstract} %manipulasi abstract
 \usepackage{chappg} % format daftar isi 
-\usepackage{color} %warna
+\usepackage{color} %warna 
 \usepackage{etoolbox} %untuk programming if-then
 \usepackage{fancyhdr} %format header & footer
-\usepackage{float} %penempatan gambar di tempat yg seharusnya
+\usepackage{float} %penempatan gambar di tempat yg seharusnya 
 \usepackage[inner=2.5cm,outer=2cm,top=2.5cm,bottom=2.5cm]{geometry} %margin
 \usepackage{graphicx} %gambar
 \usepackage{listings} %source code
@@ -41,7 +49,7 @@
 \usepackage{multicol} %multiple column
 \usepackage{ifthen} % if then
 \usepackage[pagewise]{lineno} %line numbering
-\usepackage{lipsum} % untuk testing
+\usepackage{kantlipsum} % untuk dummy text
 \usepackage{titlesec} %judul header
 \usepackage{tocbibind} %daftar isi, gambar, tabel dll
 \usepackage{tocloft} % format daftar isi 
@@ -49,24 +57,19 @@
 \usepackage{xstring} %manipulasi string
 \usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref} %\autoref, \phantomsection & link 
 \usepackage{emptypage} %halaman kosong antar bab
+\graphicspath{{./Gambar/}} 
+
+\usepackage{lcg}
+\newcommand{\random}{\rand\arabic{rand}}
 
 \let\abstractname\Abstrak
+
+\normalfont
+\DeclareFontShape{T1}{lmr}{bx}{sc} { <-> ssub * cmr/bx/sc }{}
 
 \titleformat{\chapter}[display] {\Large\bfseries\centering}{\MakeUppercase{\chaptertitlename} \thechapter}{15pt}{\Large\MakeUppercase}
 
 \renewcommand{\cftchapfont}{\scshape \bfseries}
-
-\newcommand{\vdierror}{}
-\newcommand{\daftarIsiError}[1]{\renewcommand{\vdierror}{#1}}
-
-\ifdefempty{\vdierror}
-	{\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}}
-	{\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries\MakeUppercase}}
-\renewcommand{\cftaftertoctitle}{\hfill}
-\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries\MakeUppercase}
-\renewcommand{\cftafterloftitle}{\hfill}
-\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries\MakeUppercase}
-\renewcommand{\cftafterlottitle}{\hfill}
 
 % Tidak perlu ada kata "Bab", "Gambar" atau "Tabel" di daftar 
 % \renewcommand{\cftchappresnum}{{\bf \scshape Bab} } 
@@ -76,12 +79,6 @@
 % \renewcommand{\cfttabpresnum}{{Tabel\ }} 
 % \renewcommand{\cfttabnumwidth}{2cm}
 
-\newcommand{\apptoc}{
-	% Hapus kata "Lampiran" dari daftar isi
-	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape Lampiran\  }}%
-	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{2.75cm}}
-	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape}}%	
-}
 
 \newcommand{\vnama}{Jane Doe}
 \newcommand{\vlnama}{John Doe}
@@ -109,6 +106,7 @@
 \newcommand{\vkajurtif}{Jack Doe}
 \newcommand{\vtabel}{}
 \newcommand{\vgambar}{}
+\newcommand{\vdierror}{}
 
 \newcommand{\namanpm}[2]{
 	\renewcommand{\vstaINA}{<<SKRIPSI/TUGAS AKHIR>>}
@@ -117,6 +115,7 @@
 	\renewcommand{\vprodiENG}{<<MATHEMATICS/PHYSICS/INFORMATICS>>}
 	\renewcommand{\vnama}{\uppercase{#1}} \renewcommand{\vlnama}{#1} \hypersetup{pdfauthor={#2 - #1}}
 	\renewcommand{\vnpm}{#2} \hypersetup{pdfcreator={#2}} \StrChar{\vnpm}{6}[\vprodiN]
+%	\renewcommand{\vnpm}{#2} \hypersetup{pdfcreator={\jobname}} \StrChar{\vnpm}{6}[\vprodiN]
 	\ifdefstring{\vprodiN}{1}{
 		\renewcommand{\vprodiINA}{MATEMATIKA} \renewcommand{\vprodiENG}{MATHEMATICS} 
 		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{FINAL PROJECT} \renewcommand{\vkajur}{\vkajurmat}}{}
@@ -161,11 +160,12 @@
 \newcommand{\linespacing}[1]{\renewcommand{\vspacing}{#1}}
 \newcommand{\linenumber}[1]{\renewcommand{\vlineno}{#1}}
 
+\newcommand{\daftarIsiError}[1]{\renewcommand{\vdierror}{#1}} 
 \newcommand{\gambar}[1]{\renewcommand{\vgambar}{#1}}
 \newcommand{\tabel}[1]{\renewcommand{\vtabel}{#1}}
 
 \newcommand{\bab}[1]{\newcommand{\vbab}{#1}}
-\newcommand{\lampiran}[1]{\renewcommand{\vlmp}{#1}}
+\newcommand{\lampiran}[1]{\renewcommand{\vlmp}{#1}} 
 
 \newcommand{\vpilbab}{0}
 \newcommand{\vbaba}{0}\newcommand{\vbabb}{0}\newcommand{\vbabc}{0}
@@ -225,7 +225,9 @@
 	\ifdefstring{\vspacing}{single}{\singlespacing}{}
 	\ifdefstring{\vspacing}{onehalf}{\onehalfspacing}{}
 	\ifdefstring{\vspacing}{double}{\doublespacing}{}
-	\ifdefstring{\vmode}{final}{\onehalfspacing}{}
+	\ifdefstring{\vmode}{sidang}{\onehalfspacing}{}	
+	\ifdefstring{\vmode}{sidang_akhir}{\onehalfspacing}{}	
+	\ifdefstring{\vmode}{final}{\singlespacing}{}
 }
 
 \newcommand{\appline}{
@@ -340,7 +342,7 @@
 			Bandung, \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.25cm} Menyetujui,\\
 			\vspace{0.75cm}
 			\ifdefempty{\vpembs}
-					{\centering Pembimbing Tunggal\\ \vspace{2.25cm} \vpembu\\}
+					{\centering Pembimbing\\ \vspace{2.25cm} \vpembu\\}
 					{ 	\begin{minipage}[b]{0.46\linewidth}
 							\centering Pembimbing Utama \\ \vspace{2.5cm} \vpembu \\
 						\end{minipage} \hspace{0.5cm}
@@ -348,8 +350,8 @@
 							\centering Pembimbing Pendamping \\	\vspace{2.5cm} \vpembs \\
 						\end{minipage}	
 					}
-		\end{centering}
-		\vspace{1.5cm}
+		\end{centering} 
+		\vspace{1.5cm}\\
 		\begin{centering}	
 			\begin{minipage}[b]{0.46\linewidth}
 				\centering Ketua Tim Penguji \\ \vspace{2.5cm} \vpengi \\
@@ -384,10 +386,10 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 	Tanggal \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.5cm}
 	\begin{tabular}{|p{1.75cm}|}
 		\hline
-		\\ Meterai \\ \\  
+		\\ Meterai \\ Rp. 6000 \\  
 		\hline
 	\end{tabular}\\
-	\vspace{0.5cm} 
+	\vspace{0.5cm}   
 	\vlnama \\
 	NPM: \vnpm
 \end{flushright}
@@ -397,31 +399,31 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 % Abstrak & Abstract
 \ifthenelse{{\equal{\vmode}{sidang_akhir}}\or{\equal{\vmode}{final}}}{
 \ifdefempty{\vabstrakina}{}
-	  { \vspace*{4cm}
+	  { \vspace*{4cm} 
 		\begin{abstract}
 			%\noindent \normalsize{\onehalfspacing{\vabstrakina \vspace*{1cm}\\
 			\noindent \normalsize{\vabstrakina \vspace*{1cm} 
 			
-			{\noindent \bfseries Kata-kata kunci:\ } \vkunciina}
+			{\noindent \bfseries Kata-kata kunci:\ } \vkunciina} 
 		\end{abstract}
-  		\cleardoublepage
-	  }
+  		\cleardoublepage 
+	  } 
 \ifdefempty{\vabstrakeng}{}
 	  { \def\abstractname{Abstract}
 		\vspace*{4cm}
 		\begin{abstract}
-			%\noindent \normalsize{\onehalfspacing{\vabstrakeng \vspace*{1cm}\\
-			\noindent \normalsize{\vabstrakeng \vspace*{1cm} 
+			%\noindent \normalsize{\onehalfspacing{\vabstrakeng \vspace*{1cm}\\ 
+			\noindent \normalsize{\vabstrakeng \vspace*{1cm}     
 			
-			{\noindent \bfseries Keywords:\ } \vkuncieng}
+			{\noindent \bfseries Keywords:\ } \vkuncieng} 
 		\end{abstract}			
  		\cleardoublepage
-	  }
+	  } 
 }{}
 
 % Lembar persembahan
-\ifdefstring{\vmode}{final}{
-\ifdefempty{\vuntuk}{}
+\ifdefstring{\vmode}{final}{ 
+\ifdefempty{\vuntuk}{} 
 	  { \vspace*{5cm}
 		\begin{quote} 
 			\em \raggedleft \Large{\vuntuk} 
@@ -429,8 +431,8 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
  		\cleardoublepage
 	  }
 
-\pagestyle{plain}
-	 
+\pagestyle{plain} 
+	  
 % Kata pengantar
 \ifdefempty{\vprakata}{}
 	  {	\chapter*{Kata Pengantar}
@@ -445,14 +447,31 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 	  }
 }{}
 
+
+\ifdefempty{\vdierror}
+	{\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries\MakeUppercase}}
+	{\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries\MakeUppercase} 
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+\newcommand{\apptoc}{
+	% Hapus kata "Lampiran" dari daftar isi
+	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape Lampiran\  }}%
+	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{2.75cm}}
+	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape}}%	
+}
+
 \ifthenelse{{\equal{\vmode}{kosong}}\or{\equal{\vmode}{cover}}}{}
 	{ \tableofcontents \newpage 	% Daftar isi
 	  \ifdefempty{\vgambar}{\listoffigures \newpage}{} 	% Daftar gambar
-	  \ifdefempty{\vtabel}{\listoftables \newpage}{} 		% Daftar tabel
+	  \ifdefempty{\vtabel}{\listoftables \newpage}{} 		% Daftar tabel 
 	}
 	\cleardoublepage
 %	\cleardoublepagewithpagenumber 
-}  
+}   
 
 %end depan.tex
 \clearpage
@@ -465,22 +484,22 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 \pagestyle{fancy}
 
 \tampilbab{\vbab}
-\ifdefstring{\vbaba}{1}{\include{Bab/bab1}}{}
+\ifdefstring{\vbaba}{1}{\include{Bab/bab1}}{}  
 \ifdefstring{\vbabb}{1}{\include{Bab/bab2}}{}
 \ifdefstring{\vbabc}{1}{\include{Bab/bab3}}{}
-\ifdefstring{\vbabd}{1}{\include{Bab/bab4}}{}
+\ifdefstring{\vbabd}{1}{\include{Bab/bab4}}{}  
 \ifdefstring{\vbabe}{1}{\include{Bab/bab5}}{}
 \ifdefstring{\vbabf}{1}{\include{Bab/bab6}}{}
 \ifdefstring{\vbabg}{1}{\include{Bab/bab7}}{}
 \ifdefstring{\vbabh}{1}{\include{Bab/bab8}}{}
 \ifdefstring{\vbabi}{1}{\include{Bab/bab9}}{}
 
-\bibliographystyle{ieeetr}
-\bibliography{pustaka}
+\bibliographystyle{compj} 
+\bibliography{referensi}
 
 \appendix
-\apptoc
-
+\apptoc 
+ 
 \tampillmp{\vlmp}
 \ifdefstring{\vlmpa}{1}{\include{Lampiran/lampA}}{}
 \ifdefstring{\vlmpb}{1}{\include{Lampiran/lampB}}{}
@@ -494,45 +513,4 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 
 \end{document}
 
-%=============================================================================
-% Perubahan pada versi 8 (31-05-2015): 
-%	- penambahan default data untuk beberapa keterangan dan digunakan sebagai 
-%	  template dengan tanda << & >> . Data yang diubah defaultnya adalah: nama skripsi
-%	  nama prodi, beserta bahasa inggrisnya.
-%   - Keywords dan kata kunci di abstrak ditambahkan noindent + perbaikan lainnya
-%   - Perbaikan untuk halaman tidak kosong tanpa nomor halaman romawi
-% Perubahan pada versi 7 (27-05-2014)
-%	- penambahan perintah \raggedbottom untuk menghilangkan area kosong akibat 
-%	  penempatan gambar yang tidak sempurna
-% Perubahan pada versi 6 (10-11-2013)
-%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
-%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
-%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
-%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
-%	- Kurikulum 2013 : perubahan nama buku skripsi 
-% Perubahan pada versi 5 (21-10-2012)
-%	- halaman terakhir setiap bab tidak ada headernya jika kosong
-% Perubahan pada versi 4 (06-08-2012)
-% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
-% 	- menambahkan keterangan di lampiran untuk kode program 
-% 	- ukuran font dapat diubah langsung di tiap lampiran
-% Perubahan pada versi 3 (09-07-2012): 
-%	- Tidak ada perubahan di file ini
-% Perubahan pada versi 2 (08-07-2012):
-% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
-% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
-% 	- Spasi pada buku dokumen final adalah onehalfspacing
-% Versi 1 (08-11-2011)
-%=============================================================================
-%=============================================================================
-% depan.tex v2 (09-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan halaman depan dalam bahasa inggris
-% Versi 1 (08-11-2011)
-%=============================================================================
-% setup.tex v2 (08-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan perintah untuk judulINA dan judulENG
-% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
-% Versi 1 (08-11-2011)
-%=============================================================================
+% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved

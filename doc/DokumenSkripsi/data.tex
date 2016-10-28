@@ -1,17 +1,11 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v7 (30-11-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v8 (02-10-2016) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 %
-% Perubahan pada versi 7 (30-11-2015)
-%	- Perubahan nomor bagian karena penyisipan Bagian V
-%	- Penambahan Bagian V : pengaturan kemunculan daftar gambar dan/atau tabel 
-%	  dipindahkan dari main.tex
-%	- Penambahan Bagian XV : tempat untuk menambahkan perintah yang dibuat 
-%	  sendiri, dipindahkan dari main.tex
-%	- Penambahan Bagian 0 : perintah bagi yang caption daftar isi tidak bisa
-%	  ke bagian tengah
-%
-% Perubahan pada versi sebelumnya dapat dilihat di bagian akhir file ini
+% Perubahan pada versi 8 (02-10-2016)
+%	- Perubahan keterangan pada spacing: Otomatis spasi 1 untuk buku skripsi 
+%	  final dan 1.5 untuk buku sidang
+%	- Penggunaan kantlipsum
 %_____________________________________________________________________________
 %=============================================================================
 
@@ -45,8 +39,10 @@
 \usepackage{booktabs} 
 \usepackage[table]{xcolor}
 \usepackage{longtable}
-\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{todo}
+\usepackage{verbatim} 		%multilne comment
+\usepackage{pgfplots}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -58,8 +54,7 @@
 % - kosong : tidak ada halaman depan sama sekali (untuk dokumen yang 
 %            dipergunakan pada proses bimbingan)
 % - cover : cover saja tanpa daftar isi, gambar dan tabel
-% - sidang : cover, daftar isi, gambar, tabel (IT: UTS-UAS Seminar 
-%			 dan UTS TA)
+% - sidang : cover, daftar isi, gambar, tabel 
 % - sidang_akhir : mode sidang + abstrak + abstract
 % - final : seluruh halaman awal dokumen (untuk cetak final)
 % Jika tidak ingin mencetak daftar tabel/gambar (misalkan karena tidak ada 
@@ -68,7 +63,7 @@
 % \mode{kosong}
 % \mode{cover}
 % \mode{sidang}
-%\mode{sidang_akhir}
+% \mode{sidang_akhir}
 \mode{final} 
 %=============================================================================
 
@@ -81,7 +76,7 @@
 % - yes: setiap baris diberi nomor
 % - no : baris tidak diberi nomor, otomatis untuk mode final
 %=============================================================================
-\linenumber{yes}
+\linenumber{no}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -89,12 +84,13 @@
 % 								BAGIAN IV
 %=============================================================================
 % Linespacing: jarak antara baris 
-% - single: opsi yang disediakan untuk bimbingan, jika pembimbing tidak
-%            keberatan (untuk menghemat kertas)
-% - onehalf: default dan wajib (dan otomatis) jika ingin mencetak dokumen
-%            final/untuk sidang.
-% - double : jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
-%            catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
+% - single	: wajib (dan otomatis jika ingin mencetak buku skripsi, opsi yang 
+%			  disediakan untuk bimbingan, jika pembimbing tidak keberatan 
+%			  (untuk menghemat kertas)
+% - onehalf	: default dan wajib (dan otomatis) jika ingin mencetak dokumen
+%             untuk sidang.
+% - double 	: jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
+%             catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
 %=============================================================================
 \linespacing{single}
 %\linespacing{onehalf}
@@ -199,8 +195,8 @@
 % PERHATIAN: langsung mulai setelah '{' awal, jangan mulai menulis di baris 
 %			 bawahnya
 %=============================================================================
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>> \lipsum[5]}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>> \lipsum[5]} 
+\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>> \\\kant[1]}
+\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>> \\\kant[2]} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -231,7 +227,7 @@
 % Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
 % kasih kepada yang telah membantu anda bla bla bla ....  
 %=============================================================================
-\prakata{\lipsum[3]}
+\prakata{\kant[3-4]}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -253,26 +249,8 @@
 % Tambahkan perintah yang anda buat sendiri di sini 
 %=============================================================================
 \newcommand{\vtemplateauthor}{lionov}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
 %=============================================================================
 
-%=============================================================================
-% Perubahan pada versi 6 (13-04-2015)
-% 	- Perubahan untuk data-data ``template" menjadi lebih generik dan 
-%	  menggunakan tanda << dan >>
-% Perubahan pada versi 5 (10-11-2013)
-% 	- Perbaikan pada memasukkan bab : tidak perlu menuliskan apapun untuk 
-%	  memasukkan seluruh bab (bagian V)
-% 	- Perbaikan pada memasukkan lampiran : tidak perlu menuliskan apapun untuk
-%	  memasukkan seluruh lampiran atau -1 jika tidak memasukkan apapun
-% Perubahan pada versi 4 (21-10-2012)
-%	- Data dosen dipindah ke dosen.tex agar jika ada perubahan/update data 
-%	  dosen, mahasiswa tidak perlu mengubah data.tex
-%	- Perubahan pada keterangan dosen	
-% Perubahan pada versi 3 (06-08-2012)
-% 	- Perubahan pada beberapa keterangan 
-% Perubahan pada versi 2 (09-07-2012):
-% 	- Menambahkan data judul dalam bahasa inggris
-% 	- Membuat bagian khusus untuk judul (bagian VIII)
-% 	- Perbaikan pada gelar dosen
-% Versi 1 (08-11-2011)
-%=============================================================================
+% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved

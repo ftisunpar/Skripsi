@@ -1,0 +1,454 @@
+%_____________________________________________________________________________
+%=============================================================================
+% referensi.bib v2 (03-10-2016) dibuat oleh Lionov - Informatika FTIS UNPAR
+% 
+% Ini adalah file referensi (referensi.bib), berisi petunjuk singkat membuat
+% referensi dan dipergunakan untuk menyimpan data referensi yang digunakan di
+% buku skripsi
+%
+% Sejak template skripsi versi 11, style bibliography yang digunakan adalah 
+% "computer journal" (cj). Perubahan ini disebabkan karena penulisan 
+% nama penulis pada style sebelumnya (ieeetr) tidak sesuai dengan kaidah 
+% penulisan Bahasa Indonesia, tetapi sekaligus ingin mempertahankan penggunaan
+% angka untuk merujuk dan urutan item di referensi sesuai dengan kemunculan
+^ di teks skripsi.
+% Untuk menggunakan style "cj", anda membutuhkan file "compj.bst" yang sudah
+% disertakan di dalam Template Skripsi FTIS
+%
+% File compj.bst tersebut merupakan file resmi yang digunakan oleh Computer 
+% Journal yang diterbitkan Oxford University di Inggris, kemudian dilakukan
+% cukup banyak penyesuaian untuk digunakan di FTIS UNPAR, oleh sebab itu
+% ada kemungkinan terjadi warning/error jika isi file ini digunakan untuk
+% mencetak daftar referensi dengan menggunakan style yang lain
+%
+% Jika anda menemui kesulitan dalam menuliskan referensi (karena tidak terdapat
+% pada contoh yang diberikan), anda dapat bertanya via email ke lionov(at)gmail.com 
+% atau lionov(at)unpar.ac.id
+%
+% Versi 2 (03-10-2016):
+%	- Penjelasan umum dan 12 jenis penulisan referensi
+%_____________________________________________________________________________
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% Panduan singkat penulisan isi referensi.bib untuk Template Skripsi FTIS
+%
+% Dalam file ini akan diberikan contoh cara penulisan dari 10 jenis sumber 
+% yang umum digunakan. 
+% Untuk keseluruhan penulisan nama penulis, gunakan format nama lengkap yang 
+% dipisahkan dengan kata "and" (jika terdapat beberapa orang penulis)
+% 	Contoh : John Doe and Jack Doe and Jane Doe
+% jika perlu, gunakan tanda kurung untuk nama-nama tertentu untuk memisahkan 
+% nama depan dengan nama keluarga agar lebih tepat
+% 	Contoh : John {van Doe} and Jack {von Doe}
+% atau, gunakan tanda koma yang memisahkan nama dan nama keluarga (ditulis terbalik)
+% 	Contoh : Doe, John and von Doe, Jack and Doe, Jane
+%
+% Secara umum, data untuk bibtex dapat ditemukan secara otomatis di internet
+% Misalkan untuk buku, carilah dengam mesin pencari, nama buku dengan tambahan 
+% "bibtex". Hal serupa dapat digunakan untuk mencari paper/artikel.
+%
+% Bahan kuliah (dalam bentuk slide/lecture notes) tidak dianjurkan digunakan 
+% sebagai referensi, karena biasanya isinya mengacu ke suatu buku wajib di kuliah 
+% tersebut. Jadi lebih baik mencantumkan buku wajib tersebut sebagai referensi.
+%
+% Khusus untuk mahasiswa/i prodi informatika, banyak paper/buku dapat diunduh 
+% bibtexnya dari dblp atau acm.org. Jika anda mendapatkan bib dari hasil unduh 
+% tersebut, mohon informasi yang diisi disesuaikan dengan petunjuk yang ada sehingga
+% hasil referensi anda tetap rapi.
+%
+% Mohon tidak menuliskan "et al.", karena akan disangka dihasilkan oleh template ini, 
+% padahal tidak demikian. Gunakan "dkk" bila sangat terpaksa. Lebih baik tuliskan
+% semua nama penulis untuk menghargai mereka. Tentu jika jumlahnya masuk akal, 
+% maksimal sekitar 10 orang. 
+%_____________________________________________________________________________
+%=============================================================================
+%
+%_____________________________________________________________________________
+%=============================================================================
+% Contoh penulisan referensi:
+% 	1. Buku
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul
+%		3. edition		: edisi (OPSIONAL, kosongkan entri ini jika buku tersebut merupakan edisi pertama)
+%		4. year			: tahun terbit buku
+%		5. publisher	: penerbit
+%		6. address		: kota lokasi penerbit
+%
+%	Contoh hasil di Daftar Referensi: 
+%	de Berg, M., Cheong, O., van Kreveld, M. J., dan Overmars, M. (2008) Computational Geometry: Algorithms and Applications, 3rd edition. Springer-Verlag, Berlin.
+%
+%	Contoh penulisan di file bib:
+
+@book{berg:08:compgeom,
+	author		= {Mark de Berg and Otfried Cheong and Marc J. van Kreveld and Mark Overmars},
+	title   	= {Computational Geometry: Algorithms and Applications},
+	edition		= {3rd},
+	year   		= {2008},
+	publisher	= {Springer-Verlag},
+	address		= {Berlin},
+}
+
+%	2. Bab di dalam buku.
+%	Di bagian ini, buku merupakan kumpulan bab dari pengarang-pengarang yang berbeda.
+%	Buku tersebut tidak memiliki pengarang, tetapi editor. Pengarang hanya menulis satu 
+%	(atau beberapa) bab yang menjadi bagian dari buku tersebut.
+%
+%	Field yang wajib ada:
+%		1. author		: penulis bab
+%		2. title 		: judul bab
+%		3. editor		: editor buku
+%		4. booktitle	: judul buku
+%		5. edition		: edisi
+%		6. year			: tahun terbit buku
+%		7. publisher	: penerbit
+%		8. address		: kota lokasi penerbit
+%
+%	Contoh hasil di Daftar Referensi: 
+%	van Kreveld, M. J. (2004) Geographic information systems. Bagian dari Goodman, J. E. dan O'Rourke, J. (ed.), Handbook of Discrete and Computational Geometry. Chapman & Hall/CRC, Boca Raton.
+%
+%	Pada contoh di atas, van Kreveld, M. J. adalah penulis bab dengan judul "Geographic information systems". 
+%	Bab tersebut ada di dalam buku "Handbook of Discrete and Computational Geometry" dengan editor Goodman, J. E. dan O'Rourke, J.
+%	
+%	Catatan: Jika bab pada buku tersebut tidak memiliki judul, gunakan inbook (awali dgn tanda (at)). 
+%	Perbedaannya hanya mengganti "title" dengan "chapter" , yang kemudian diisi dengan nomor bab
+%
+%	Contoh penulisan di file bib:
+
+@incollection{kreveld:04:GIS,
+	author 		= {Marc J. van Kreveld},								
+	title 		= {Geographic Information Systems},						
+	editor 		= {Jacob E. Goodman and Joseph O'Rourke},				
+	booktitle 	= {Handbook of Discrete and Computational Geometry},
+	edition		= {2nd},
+	year 		= {2004},
+	publisher	= {Chapman \& Hall/CRC},
+	address		= {Boca Raton},
+}
+
+%	3. Artikel dari jurnal
+%	Artikel (atau paper) yang berasal dari jurnal ilmiah. 
+%
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul artikel
+%		3. journal		: nama jurnal
+%		4. volume		: volume jurnal
+%		5. pages		: halaman awal dan akhir dari artikel pd buku jurnal
+%		6. year			: tahun terbit jurnal
+%
+%	Contoh hasil di Daftar Referensi:   
+%	Buchin, K., Buchin, M., van Kreveld, M. J., Löffler, M., Silveira, R. I., Wenk, C., dan Wiratma, L. (2013) Median trajectories. Algorithmica, 66, 595-614. 
+%
+%	Contoh penulisan di file bib:
+
+@article{buchin:13:median,
+	author		= {Kevin Buchin and Maike Buchin and Marc J. van Kreveld and Maarten L{\"{o}}ffler and Rodrigo I. Silveira and Carola Wenk and Lionov Wiratma},
+	title     	= {Median Trajectories},
+	journal   	= {Algorithmica},
+	volume    	= {66},
+	pages     	= {595--614},
+	year      	= {2013},
+}
+
+%	4. Artikel dari prosiding seminar/konferensi
+%	Artikel (atau paper) yang berasal dari prosiding seminar/konferensi ilmiah. 
+%
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul artikel
+%		3. pages		: halaman awal dan akhir dari artikel pd prosiding
+%		4. booktitle	: nama prosiding
+%		5. year			: tahun diadakannya seminar/konferensi
+%		6. month		: tanggal awal-akhir dan bulan diadakannya seminar/konferensi
+%		7. address		: tempat (kota dan negara tempat diadakannya seminar/konferensi)
+%		8. publisher	: penerbit, disertai dengan lokasi penerbit (kota) !!
+%
+%		Note : penulisan month HARUS SETELAH year !
+%
+%	Contoh hasil di Daftar Referensi: 
+%	van Kreveld, M. J. dan Wiratma, L. (2011) Median trajectories using well-visited regions and shortest paths. Proceedings of the 19th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems, Chicago, USA, 1-4 November, pp. 241-250. ACM, New York.
+%
+%	Contoh penulisan di file bib:
+
+@inproceedings{kreveld:11:median,
+	author    	= {Marc J. van Kreveld and Lionov Wiratma},
+	title     	= {Median trajectories using well-visited regions and shortest paths},
+	pages     	= {241--250}, 	
+	booktitle 	= {Proceedings of the 19th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems},	
+	year      	= {2011},
+	month		= {1-4 November},
+	address		= {Chicago, USA},
+	publisher	= {ACM, New York}
+}
+
+%	5. Skripsi/Thesis/Disertasi
+%	Skripsi S1, Thesis S2 atau Disertasi S3. 
+%
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul 
+%		3. year			: tahun diselesaikan
+%		4. school		: universitas tempat penulis menyelesaikannya
+%		5. address		: lokasi universitas (negara)
+%
+%	Untuk menuliskan skripsi/thesis/disertasi, digunakan item bib yg berbeda, gunakan :
+%	(at)undergraduatethesis : Skripsi S1
+%   (at)masterthesis 		: Thesis S2
+%   (at)phdthesis			: Disertasi S3
+%
+%	Contoh hasil di Daftar Referensi: 
+%	- Lionov (2002) Animasi algoritma sweepline untuk membangun diagram voronoi. Skripsi. Universitas Katolik Parahyangan, Indonesia.
+%	- Wiratma, L. (2010) Following the majority: A new algorithm for computing a median trajectory. Thesis. Utrecht University, The Netherlands.
+%	- Wiratma, L. (2022) Coming Not Too Soon, Later, Delay, Someday, Hopefully. Disertasi. Utrecht University, The Netherlands.
+%
+%	Contoh penulisan di file bib:
+
+@undergraduatethesis{lionov:02:animasi, 
+	author		= {Lionov},
+	title     	= {Animasi Algoritma Sweepline Untuk Membangun Diagram Voronoi},
+	year      	= {2002},
+	school     	= {Universitas Katolik Parahyangan},
+	address		= {Indonesia},
+}
+
+@masterthesis{wiratma:10:following, 
+	author		= {Lionov Wiratma},
+	title     	= {Following The Majority: a New Algorithm For Computing a Median Trajectory},
+	year      	= {2010},
+	school     	= {Utrecht University},
+	address		= {The Netherlands},
+}
+
+@phdthesis{wiratma:22:later, 
+	author		= {Lionov Wiratma},
+	title     	= {Coming Not Too Soon, Later, Delay, Someday, Hopefully},
+	year      	= {2022},
+	school     	= {Utrecht University},
+	address		= {The Netherlands},
+}
+
+%	6. Technical/Scientific Report
+%	Pada umumnya, Technicalreport adalah laporan hasil penelitian ilmiah yang tidak diterbitkan ke dalam prosiding ataupun jurnal. 
+%	Technical report memiliki penomoran resmi karena diakui oleh universitas/organisasi, penomoran ini biasanya yang membedakan antara 
+%	technical report dengan lecture notes
+%
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul 
+%		3. number		: nomor laporan
+%		4. year			: tahun diterbitkan
+%		5. institution	: universitas/organisasi penerbit laporan 
+%		6. address		: lokasi universitas (negara)
+%
+%	Contoh hasil di Daftar Referensi:
+% 	van Kreveld, M., van Lankveld, T., and Veltkamp, R. (2013) Watertight scenes from urban lidar and planar surfaces. Technical Report UU-CS-2013-007. Utrecht University, The Netherlands,
+%
+%	Contoh penulisan di file bib:
+
+@techreport{kreveld:07:watertight,
+	author 		= {Marc van kreveld and Thijs van Lankveld and Remco Veltkamp},
+	title 		= {Watertight Scenes from Urban LiDAR and Planar Surfaces},
+	number		= {UU-CS-2013-007},
+	year 		= {2013},
+	institution = {Utrecht University},
+	address 	= {The Netherlands},	
+}
+
+%	7. RFC (Request For Comments)
+%
+%	RFC (Request for Comments) adalah publikasi dari Internet Engineering Task Force (IETF) and the Internet Society (ISOC), organisasi(?)
+%	yang merilis standar-standar yang berkaitan dengan internet.
+%
+%	Field yang wajib ada:
+%		1. author		: penulis
+%		2. title 		: judul 
+%		3. number		: nomor RFC 
+%		4. year			: tahun diterbitkan
+%
+%	Catatan: terdapat website yang dapat menghasilkan secara otomatis entry bibtex jika anda mengetahui nomor RFC-nya
+%
+%	Contoh hasil di Daftar Referensi: 
+%	 Rekhter, Y. dan Li, T. (1994) A border gateway protocol 4 (bgp-4). RFC 1654. RFC Editor, http://www.rfc-editor.org.
+%
+%	Contoh penulisan di file bib:
+
+@rfc{RFC1654, 
+	author 		= {Yakov Rekhter and Tony Li},
+	title 		= {A Border Gateway Protocol 4 (BGP-4)},
+	number 		= {1654},
+	year 		= {1994}, 
+}
+ 	
+
+%	8. Technical Documentation/Technical Manual
+%
+%	Technical Documentation adalah jenis dokumen yang mendeskripsikan kegunaan, arsitektur dan cara menggunakan sebuah produk.
+%	Produk di sini dalam artian yang luas, jadi dapat saja berupa suatu proses maupun sistem.
+%	Contoh dokumen dalam kategori ini misalnya dokumen mengenai standar (mis: Unicode) atau dokumen API.
+%
+%	Field yang wajib ada:
+%		1. number		: nomor seri manual
+%		2. title 		: judul 
+%		3. year			: tahun diterbitkan
+%		4. organization	: nama organisasi/perusahaan/kelompok yang menerbitkan, bisa juga diisi dgn para penulis
+%		5. address 		: lokasi dari organisasi yang menerbitkan (kota dan negara) 
+%	
+%	Contoh hasil di Daftar Referensi:
+%	- ITU-T. Z.500 (1997) Framework on formal methods in conformance testing. International Telecommunications Union, Geneva, Switzerland. 
+%	- Version 9.0.0 (2016) The Unicode Standard. The Unicode Consortium. Mountain View, USA. 
+%	- Version 7.0 Nougat (2016) Android API Reference Manual. Google dan Open Handset Alliance. Mountain View, USA.
+%	Contoh penulisan di file bib:
+
+@manual{Z.500,
+	number 		= {ITU-T Z.500},
+	title 		= {Framework on formal methods in conformance testing},
+	year 		= {1997},
+	organization= {International Telecommunications Union},	
+	address 	= {Geneva, Switzerland},
+}
+
+@manual{unicode:16:stdv9,
+	number 		= {Version 9.0.0},
+	title 		= {The Unicode Standard},
+	year 		= {2016},
+	organization= {The Unicode Consortium},	
+	address 	= {Mountain View, USA},
+}
+
+@manual{google:16:and7,
+	number 		= {Version 7.0 Nougat},
+	title 		= {Android API Reference Manual},
+	year 		= {2016},
+	organization= {Google dan Open Handset Alliance},	
+	address 	= {Mountain View, USA},
+}
+
+%	9. Paten
+%
+%	Paten adalah hak eksklusif yang diberikan kepada penemu.
+%
+%	Field yang wajib ada:
+%		1. author		: nama penemu paten 
+%		2. title 		: judul 
+%		3. number		: nomor paten
+%		4. year			: tahun dipatenkan
+%		5. organization	: diisi dengan badan yang memberikan paten
+%		6. address 		: lokasi dari organisasi yang memberikan paten (kota dan negara)
+%	
+%	Contoh hasil di Daftar Referensi:
+%	 Webb, R., Daruca, O., dan Alfadian, P. (2012) Method of optimizing a text massage communication between a server and a secure element. Paten no. EP2479956 (A1). European Patent Organisation. Munich, Germany.
+%
+%	Contoh penulisan di file bib:
+
+@patent{webb:12:comm,
+	author		= {Ronaldo Webb and Olga Daruca and Pascal Alfadian},
+	title 		= {Method of optimizing a text massage communication between a server and a secure element},
+	number		= {EP2479956 (A1)},
+	year 		= {2012},
+	organization= {European Patent Organisation},	
+	address 	= {Munich, Germany},
+}
+
+%	10. Unpublished
+%
+%	TIDAK DIANJURKAN UNTUK DIGUNAKAN, KONSULTASIKAN DENGAN PEMBIMBING MASING-MASING
+%	(karena selalu ada referensi lain yang lebih baik)
+%
+%	Unpublished adalah dokumen yang tidak dipublikasikan dan seringkali tidak melalui proses seperti layaknya buku/artikel di jurnal.
+%	Contoh dokumen dalam kategori ini misalnya catatan kuliah (lecture note), laporan tugas kuliah, dll
+%	Skripsi/Thesis/Disertasi sebetulnya masuk dalam kategori ini, tetapi dalam template ini, mereka dipisahkan menjadi kategori tersendiri
+%
+%	Field yang wajib ada:
+%		1. author		: nama penulis
+%		2. title 		: judul 
+%		3. year			: tahun penulisan 
+%		4. note 		: penjelasan jenis dokumen
+%		5. url			: (OPSIONAL) jika dokumen didapat dari internet, tuliskan alamat url-nya
+%		6. access		: (OPSIONAL) dan kapan dokumen tersebut diakses 
+%	
+%	Contoh hasil di Daftar Referensi:
+%	- Wiratma, L. (2009) Median trajectory. Report of GMT Experimentation Project at Utrecht University.
+%	- Lionov (2011) Polymorphism pada C++. Catatan kuliah AKS341 Pemrograman Sistem di Universitas Katolik Parahyangan, Bandung. http://tinyurl.com/lionov. 30 September 2016.
+%
+%	Contoh penulisan di file bib:
+
+@unpublished{wiratma:09:median,
+	author		= {Lionov Wiratma},
+	title		= {Median Trajectory},
+	year		= {2009},
+	note		= {Report for GMT Experimentation Project at Utrecht University},
+}
+
+@unpublished{lionov:11:cpoly,
+	author		= {Lionov},
+	title		= {Polymorphism pada {C++}},
+	year		= {2011},
+	note		= {Catatan kuliah AKS341 Pemrograman Sistem di Universitas Katolik Parahyangan, Bandung},
+	url			= {http://tinyurl.com/lionov},
+	access 		= {30 September 2016},	
+}
+
+%	11. Halaman Web 
+%
+%	TIDAK DIANJURKAN UNTUK DIGUNAKAN, KONSULTASIKAN DENGAN PEMBIMBING MASING-MASING
+%	(karena informasi yang beredar begitu saja di internet, bisa saja tidak akurat)
+%
+%	!!! KHUSUS MAHASISWA TEKNIK INFORMATIKA: DILARANG MENGGUNAKAN INI, GUNAKAN FOOTNOTE !!!!!
+$
+%	Halaman web, tidak perlu penjelasan. 
+%
+%	Field yang wajib ada:
+%		1. author		: nama penulis
+%		2. title 		: judul halaman web atau judul dari isi tulisan 
+%		3. year			: tahun penulisan  
+%		4. url			: tuliskan url dari halaman web tersebut, penulisan mengikuti contoh yang disediakan
+%		5. access		: kapan terakhir kali anda mengakses halaman tersebut, penulisan mengikuti contoh
+%
+%	Contoh hasil di Daftar Referensi:
+%	Erickson, J. (2003) CG models of computation? http://www.computational-geometry.org/mailing-lists/compgeom-announce/2003-December/000852.html. 30 September 2016.
+%
+%	Contoh penulisan di file bib:
+
+@web{erickson:03:cgmodel,
+	author 		= {Jeff Erickson},
+	title 		= {{CG} models of computation?},
+	year 		= {2003},
+	url 		= {http://www.computational-geometry.org/mailing-lists/compgeom-announce/2003-December/000852.html},
+	access 		= {30 September 2016},
+}
+
+%	12. Lain-lain
+%
+%	TIDAK DIANJURKAN UNTUK DIGUNAKAN, KONSULTASIKAN DENGAN PEMBIMBING MASING-MASING
+$
+%	Untuk yang tidak masuk kategori di atas, misalnya artikel di koran atau majalah. 
+%	Konsultasikan dengan pembimbing masing-masing, apakah perlu diletakkan di Daftar Referensi atau cukup untuk dijadikan footnote.
+%	Jika anda menjumpai kasus tersebut, sangat diharapkan bantuannya untuk memperbaharui template ini dengan cara
+%	memberitahukannya via email ke lionov(at)unpar.ac.id 
+%
+%	Field yang wajib ada :
+%		1. author		: nama penulis
+%		2. title 		: judul 
+%		3. year			: tahun penulisan  
+%		4. howpublished : paparkan bagaimana referensi ini dipublikasi 
+%		5. note			: (OPSIONAL) keterangan lain yang diperlukan
+%	
+%	Contoh hasil di Daftar Referensi:
+%
+%
+%	Contoh penulisan di file bib:
+
+@misc{agung:12:tango,
+	author 			= {AGUNG},
+	title 			= {Menjajal Tango 12},
+	year 			= {2012},
+	howpublished	= {Majalah HAI no 02, Januari 2012},
+	note			= {},
+}
+%_____________________________________________________________________________
+%=============================================================================
+
+% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved

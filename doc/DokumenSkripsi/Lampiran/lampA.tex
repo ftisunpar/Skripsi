@@ -1,44 +1,74 @@
-\chapter{The Program}
-\label{app:A}
+%versi 2 (8-10-2016)
+\chapter{Kode Program}
+\label{lamp:A}
 
-The interface of the program is shown in Figure~\ref{fig:appxa2}:
+%selalu gunakan single spacing untuk source code !!!!!
+\singlespacing 
+% language: bahasa dari kode program
+% terdapat beberapa pilihan : Java, C, C++, PHP, Matlab, R, dll
+%
+% basicstyle : ukuran font untuk kode program
+% terdapat beberapa pilihan : tiny, scriptsize, footnotesize, dll
+%
+% caption : nama yang akan ditampilkan di dokumen akhir, lihat contoh
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=MyFurSet.java]
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=1]{Gambar/appxa2}
-\caption[Interface of the program]{Interface of the program} 
-\label{fig:appxa2}
-\end{figure}
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet; 
 
-Step by step to compute the median trajectory using the program:
-\begin{enumerate}
-\item
-Create several waypoints. 
-Click anywhere in the ``Environment'' area(1) or create them automatically by setting the parameters for waypoint(2) or clicking the button ``Random''(3).
-\item
-The ``Variation'' tab could be used to create variations by providing values needed to make them(4).
-\item
-Create a set of trajectories by setting all parameters(5) and clicking the button ``Create''(6).
-\item
-Compute the median using the homotopic algorithm: 
-\begin{itemize}
-\item Define all parameters needed for the homotopic algorithm(7).
-\item Create crosses by clicking the ``Create Crosses'' button(8).\item Compute the median by clicking the ``Compute Median'' button(9).
-\end{itemize}
-\item
-Compute the median using the switching method and the buffer algorithm: 
-\begin{itemize}
-\item Define all parameters needed for the buffer algorithm(10).
-\item Create valid edges by clicking the ``Create Valid Edges''button(11). 
-\item Compute the median by clicking the ``Compute Median''button(12).
-\end{itemize}
-\item
-Save the resulting median by clicking the ``Save Trajectories'' button(13).
-The result is saved in the computer memory and can be seen in ``Data'' tab(14) 
-\item 
-The set of trajectories and its median trajectories will appear in the ``Environment'' area(1) and the user can change what to display by selecting various choices in ``Visualize'' and ``Median'' area(15).
-\item
-To save all data to the disk, click the ``Save''(16) button. A file dialog menu will appear.
-\item
-To load data from the disk, click the ``Load''(17) button.
-\end{enumerate}
+/**
+ *
+ * @author Lionov
+ */
+
+//class for set of vertices close to furthest edge
+public class MyFurSet {
+    protected int id;                                  //id of the set
+    protected MyEdge FurthestEdge;                     //the furthest edge
+    protected HashSet<MyVertex> set;                   //set of vertices close to furthest edge
+    protected ArrayList<ArrayList<Integer>> ordered;   //list of all vertices in the set for each trajectory
+    protected ArrayList<Integer> closeID;              //store the ID of all vertices
+    protected ArrayList<Double> closeDist;             //store the distance of all vertices
+    protected int totaltrj;                            //total trajectories in the set
+
+    /**
+     * Constructor
+     * @param id : id of the set
+     * @param totaltrj : total number of trajectories in the set
+     * @param FurthestEdge : the furthest edge
+     */
+    public MyFurSet(int id,int totaltrj,MyEdge FurthestEdge) {
+        this.id = id;
+        this.totaltrj = totaltrj;
+        this.FurthestEdge = FurthestEdge;
+        set = new HashSet<MyVertex>();
+        ordered = new ArrayList<ArrayList<Integer>>();
+        for (int i=0;i<totaltrj;i++) ordered.add(new ArrayList<Integer>());
+        closeID = new ArrayList<Integer>(totaltrj);
+        closeDist = new ArrayList<Double>(totaltrj);
+        for (int i = 0;i <totaltrj;i++) {
+            closeID.add(-1);
+            closeDist.add(Double.MAX_VALUE);
+        }
+    }
+
+    /**
+     * set a vertex into the set
+     * @param v : vertex to be added to the set
+     */
+    public void add(MyVertex v) {
+        set.add(v);
+    }
+
+    /**
+     * check whether vertex v is a member of the set
+     * @param v : vertex to be checked
+     * @return true if v is a member of the set, false otherwise
+     */
+    public boolean contains(MyVertex v) {
+        return this.set.contains(v);
+    }
+}
+\end{lstlisting}
+

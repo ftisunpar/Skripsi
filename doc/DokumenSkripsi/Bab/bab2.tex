@@ -1,152 +1,165 @@
-\chapter{The Description of a Set of Trajectories and Its Median Trajectory}
-\label{chap:definition}
+%versi 2 (8-10-2016)
+\chapter{Landasan Teori}
+\label{chap:teori}
 
-\section{Set of Trajectories}
-\label{sec:setoftrjs}
+\section{Skripsi}
+\label{sec:skripsi} 
 
-In this thesis, we only consider the spatial component of the trajectory. 
-Therefore, we represent a trajectory as a polygonal line built by a series of points and connected by line segments.   
+\textsc{
+Rencananya akan diisi dengan penjelasan umum mengenai buku skripsi.
+}
+
+\kant[11]
+
+\section{\LaTeX}
+\label{sec:latex}
+
+\textsc{
+Mengapa menggunakan \LaTeX{} untuk buku skripsi dan apa keunggulan/kerugiannya bagi mahasiswa dan pembuat template. 
+}
+
+\kant[12]
+
+
+\section{Template Skripsi FTIS UNPAR}
+\label{sec:template}
  
-Let $T:=\{\tau_{1},\tau_{2},...,\tau_{m}\}$ be the input set of $m$ trajectories for which we want to compute its median trajectory $\tau^{M}$.
-We define each trajectory in $T$ as a list of at most $n$ points, $\tau_{i}:=(p_{i,1},...,p_{i,k})$ where $1 \leq i \leq m$ and $2 \leq k \leq n$. 
-Note that the number of points for each trajectory can be different.
-Every two consecutive points $p_{i,j}$ and $p_{i,j+1}$ $(1 \leq j \leq k-1)$ are connected by a segment $s_{i,j}:=(\overline{p_{i,j},p_{i,j+1}})$.
+ \textsc{
+ Akan dipaparkan bagaimana menggunakan template ini, termasuk petunjuk singkat membuat referensi, gambar dan tabel.
+ Juga hal-hal lain yang belum terpikir sampai saat ini. 
+ }
+ 
+ \kant[13]
 
-$P$ is the set of all points in $T$, $P:=\{p_{i,j} \mid i \in \{ 1 ... m\} , j \in \{ 1 ... n\} \}$ and $S$ is the set of all segments in $T$, $S:=\{s_{i,j} \mid i \in \{ 1 ... m\} , j \in \{ 1 ... n-1\} \}$.
-All trajectories in $T$ share the same start and end points $(p_{1,1}=p_{2,1}=...=p_{m,1}$ and $p_{1,k_{1}}=p_{2,k_{2}}=...=p_{m,k_{m}}$ where $ \{k_{1},...,k_{m}\} \in \{1,...,n\})$. 
+\subsection{Tabel}  
+ 
+Berikut adalah contoh pembuatan tabel. 
+Penempatan tabel dan gambar secara umum diatur secara otomatis oleh \LaTeX{}, perhatikan contoh di file bab2.tex untuk melihat bagaimana cara memaksa tabel ditempatkan sesuai keinginan kita.
 
-Trajectories can intersect with other trajectories in other points than their start and end points.
-These intersection points are also included in the list of points that define the trajectory. When two segments intersect each other, then both segments will be split into two parts and all four segments share one intersection point as one of their endpoints (see Figure~\ref{fig:number_trj}).
+Perhatikan bawa berbeda dengan penempatan judul gambar gambar, keterangan tabel harus diletakkan di atas tabel!!
+Lihat Tabel~\ref{tab:contoh1} berikut ini:
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Gambar/number_trj}
-\caption[Numbering of points and segments]{Numbering of points and segments} 
-\label{fig:number_trj}
-\end{figure}
+\begin{table}[H] %atau h saja untuk "kira kira di sini"
+	\centering 
+	\caption{Tabel contoh}
+	\label{tab:contoh1}
+	\begin{tabular}{cccc}
+		\toprule
+		& $v_{start}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
 
-Let $n'$ be the number of points in a trajectory, including their intersection points with other trajectories. 
-In the worst case, $n' = mn^{2}$. 
-In the rest of this thesis, we define $n$ as a number of points in a trajectory, inclusive with its intersection points with other trajectories. 
-Note that the number of segments for each trajectory is linear to the number of points, because trajectory with $n$ points has $n-1$ segments.
+		\midrule
+		$\tau_{1}$ & 1 & 12& 20\\
+		$\tau_{2}$ & 1 &  & 20\\
+		$\tau_{3}$ & 1 & 9 & 20\\
+		$\tau_{4}$ & 1 &  & 20\\
 
-\section{Properties of the Median Trajectory}
-\label{sec:prop_medtrj}
+		\bottomrule
+		
+	\end{tabular} 
+\end{table}
+Tabel~\ref{tab:cthwarna1} dan Tabel~\ref{tab:cthwarna2} berikut ini adalah tabel dengan sel yang berwarna dan ada dua tabel yang bersebelahan. 
+\begin{table}[H]
+	\begin{minipage}[c]{0.49\linewidth}
+		\centering
+		\caption{Tabel bewarna(1)}
+		\label{tab:cthwarna1}
+		\begin{tabular}{ccccc}
+			\toprule
+			 & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
+			
+			\midrule
+			$\tau_{1}$ & 1 & 5 \cellcolor{green}& 12& 20\\
+			$\tau_{2}$ & 1 & 8 \cellcolor{green}& & 20\\
+			$\tau_{3}$ & 1 & 2/8/17 \cellcolor{green}& 9 & 20\\
+			$\tau_{4}$ & 1 & \cellcolor{red}& & 20\\
+			
+			\bottomrule
 
-We define several properties for the median trajectory  $\tau^{M}$ with respect to the input set of trajectories $T$:
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}[c]{0.49\linewidth}
+		
+		\centering 
+		\caption{Tabel bewarna(2)}
+		\label{tab:cthwarna2}
+		\begin{tabular}{ccccc}
+			\toprule
+			 & $v_{start}$ & $\mathcal{S}_{1}$ & $\mathcal{S}_{2}$ & $v_{end}$\\
+			
+			\midrule
+			$\tau_{1}$ & 1 & 12& 5 \cellcolor{red} &20\\
+			$\tau_{2}$ & 1 &  &  8 \cellcolor{green} &20\\
+			$\tau_{3}$ & 1 & 9 & 2/8/17 \cellcolor{green} &20\\
+			$\tau_{4}$ & 1 &   & \cellcolor{red} &20\\
+			
+			\bottomrule
+		
+		\end{tabular}
+	\end{minipage}
+\end{table}
 
+ 
+\subsection{Kutipan}
+\label{subs:kutipan} 
+Berikut contoh kutipan dari berbagai sumber, untuk keterangan lebih lengkap, silahkan membaca file referensi.bib yang disediakan juga di template ini.
+Contoh kutipan:
 \begin{itemize}
-\item 
-$\tau^{M}$ is a directed polygonal line from start point to end point and should be similar to most trajectories in $T$.
+	\item Buku:~\cite{berg:08:compgeom} 
+	\item Bab dalam buku:~\cite{kreveld:04:GIS}
+	\item Artikel dari Jurnal:~\cite{buchin:13:median}
+	\item Artikel dari prosiding seminar/konferensi:~\cite{kreveld:11:median}
+	\item Skripsi/Thesis/Disertasi:~\cite{lionov:02:animasi}~\cite{wiratma:10:following}~\cite{wiratma:22:later}
+	\item Technical/Scientific Report:~\cite{kreveld:07:watertight}
+	\item RFC (Request For Comments):~\cite{RFC1654}
+	\item Technical Documentation/Technical Manual:~\cite{Z.500}~\cite{unicode:16:stdv9}~\cite{google:16:and7}
+	\item Paten:~\cite{webb:12:comm}
+	\item Tidak dipublikasikan:~\cite{wiratma:09:median}~\cite{lionov:11:cpoly}
+	\item Laman web:~\cite{erickson:03:cgmodel}  
+	\item Lain-lain:~\cite{agung:12:tango}
+\end{itemize}    
+  
+\subsection{Gambar}
 
-\item 
-It must be built only using points and segments which are parts of trajectories in the input set. 
-
-\item 
-The usage of segments should follow the direction of them. Therefore, it is not allowed to use a segment such that the direction of $\tau^{M}$ is opposite to the direction of that segment in a trajectory (see Figure~\ref{fig:forbid_seg}, indicated by the dark blue arrow).
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.9]{Gambar/forbid_seg}
-\caption[Possible median trajectory (in black) with backward direction (pointed by the blue arrow)]{Possible median trajectory (in black) with backward direction (indicated by the blue arrow)} 
-\label{fig:forbid_seg}
-\end{figure}
-
-\item 
-The length of the median trajectory should be relatively the same as the average length of all trajectories in the input set.
-
-\item 
-The total angular change should also be similar to the average of total angular change of all trajectories in the input set.
-The total angular change of a trajectory is the sum of all angular changes at every vertex in that trajectory (see Figure~\ref{fig:total_ang}). 
-
-\begin{figure}
-\centering
-\includegraphics[scale=1]{Gambar/total_ang}
-\caption[Red arcs indicate the angular change at each vertex]{Red arcs indicate the angular change at each vertex} 
-\label{fig:total_ang}
-\end{figure}
-
-\item 
-The number of vertices and edges of $\tau^{M}$ should be about the same with the average of the number of vertices and edges from all trajectories in the input set.
-		%\item The final result of $\tau^{M}$ should not be influenced by an outliers.  
+Pada hampir semua editor, penempatan gambar di dalam dokumen \LaTeX{} tidak dapat dilakukan melalui proses {\it drag and drop}.
+Perhatikan contoh pada file bab2.tex untuk melihat bagaimana cara menempatkan gambar.
+Beberapa hal yang harus diperhatikan pada saat menempatkan gambar:
+\begin{itemize}
+	\item Setiap gambar {\bf harus} diacu di dalam teks (gunakan {\it field} {\sc label})
+	\item {\it Field} {\sc caption} digunakan untuk teks pengantar pada gambar. Terdapat dua bagian yaitu yang ada di antara tanda $[$ dan $]$ dan yang ada di antara tanda $\{$ dan $\}$. Yang pertama akan muncul di Daftar Gambar, sedangkan yang kedua akan muncul di teks pengantar gambar. Untuk skripsi ini, samakan isi keduanya.
+	\item Jenis file yang dapat digunakan sebagai gambar cukup banyak, tetapi yang paling populer adalah tipe {\sc png} (lihat Gambar~\ref{fig:ularpng}), tipe {\sc jpg} (Gambar~\ref{fig:ularjpg}) dan tipe {\sc pdf} (Gambar~\ref{fig:ularpdf})
+	\item Besarnya gambar dapat diatur dengan {\it field} {\sc scale}.
+	\item Penempatan gambar diatur menggunakan {\it placement specifier} (di antara tanda  $[$ dan $]$ setelah deklarasi gambar.
+	Yang umum digunakan adalah {\bf H} untuk menempatkan gambar {\bf sesuai} penempatannya di file .tex atau  {\bf h} yang berarti "kira-kira" di sini. \\
+	Jika tidak menggunakan {\it placement specifier}, \LaTeX{} akan menempatkan gambar secara otomatis untuk menghindari bagian kosong pada dokumen anda.
+	Walaupun cara ini sangat mudah, hindarkan terjadinya penempatan dua gambar secara berurutan. 	
+	\begin{itemize}
+		\item Gambar~\ref{fig:ularpng} ditempatkan di bagian atas halaman, walaupun penempatannya dilakukan setelah penulisan 3 paragraf setelah penjelasan ini.
+		\item Gambar~\ref{fig:ularjpg} dengan skala 0.5 ditempatkan di antara dua buah paragraf. Perhatikan penulisannya di dalam file bab2.tex!
+		\item Gambar~\ref{fig:ularpdf} ditempatkan menggunakan {\it specifier} {\bf h}.
+	\end{itemize}
 \end{itemize}
+ 
+\kant[14-15]
+\begin{figure} 
+	\centering  
+	\includegraphics[scale=1]{ular-png}  
+	\caption[Gambar {\it Serpentes} dalam format png]{Gambar {\it Serpentes} dalam format png} 
+	\label{fig:ularpng} 
+\end{figure} 
 
+\kant[16]
+\begin{figure}[H]
+	\centering  
+	\includegraphics[scale=0.5]{ular-jpg}  
+	\caption[Ular kecil]{Ular kecil} 
+	\label{fig:ularjpg} 
+\end{figure} 
+\kant[17-19]
 
-Using the definition of the input set of trajectories defined in the previous section, we define a median trajectory $\tau^{M}$ as a sequence of points from $T$, $\tau^{M}:=(p_{i_{1},j_{1}},p_{i_{2},j_{2}},...,$ $p_{i_{k},j_{k}})$ where $\{i_{1},i_{2},...,i_{k}\} \in \{1 ... m\}$ and $\{j_{1},j_{2},...,j_{k}\} \in \{ 1 ... n\}$, or defined as a sequence of segments: $\tau^{M}:=(s_{i_{1},j_{1}},s_{i_{2},j_{2}}, ...,s_{i_{k},j_{k}})$ where $\{i_{1},i_{2},...,i_{k}\} \in \{1 ... m\}$ and $\{j_{1},j_{2},...,j_{k}\} \in \{1 ... n-1\}$. 
-Note that $\tau^{M}$ and all trajectories in $T$ share the same start point and end point.   
-
-
-%  
-
-Table~\ref{tab:tab_begin} shows how this information is kept in $\Gamma$. 
-\begin{table}
-\centering
-\caption{Table $\Gamma$ after inserting $\mathcal{S}_{1}$}
-\label{tab:tab_begin}
-\begin{tabular}{cccc}
-\toprule
-
- & $v_{start}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 12& 20\\
-$\tau_{2}$ & 1 &  & 20\\
-$\tau_{3}$ & 1 & 9 & 20\\
-$\tau_{4}$ & 1 &  & 20\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-There are two possibilities of the placement of $\mathcal{S}_{2}$: 
-\begin{table}[H]
-\begin{minipage}[c]{0.49\linewidth}
-\centering
-\caption{$\mathcal{S}_{2}$ between $v_{start}$ and $\mathcal{S}_{1}$}
-\label{tab:tab_next1}
-\begin{tabular}{ccccc}
-\toprule
-
- & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 5 \cellcolor{green}& 12& 20\\
-$\tau_{2}$ & 1 & 8 \cellcolor{green}& & 20\\
-$\tau_{3}$ & 1 & 2/8/17 \cellcolor{green}& 9 & 20\\
-$\tau_{4}$ & 1 & \cellcolor{red}& & 20\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\begin{minipage}[c]{0.49\linewidth}
-
-\centering
-\caption{$\mathcal{S}_{2}$ between $\mathcal{S}_{1}$ and $v_{end}$}
-\label{tab:tab_next2}
-\begin{tabular}{ccccc}
-\toprule
-
- & $v_{start}$ & $\mathcal{S}_{1}$ & $\mathcal{S}_{2}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 12& 5 \cellcolor{red} &20\\
-$\tau_{2}$ & 1 &  &  8 \cellcolor{green} &20\\
-$\tau_{3}$ & 1 & 9 & 2/8/17 \cellcolor{green} &20\\
-$\tau_{4}$ & 1 &   & \cellcolor{red} &20\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\end{table}
-
-The final placement of table $\Gamma$ after simplification: 
-\begin{table}[H]
-\centering
-\caption{Final $\Gamma$}
-\label{tab:tab_final}
-\begin{tabular}{ccccc}
-\toprule
- & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 5 & 12& 20\\
-$\tau_{2}$ & 1 & 8 &   & 20\\
-$\tau_{3}$ & 1 & 8 & 9 & 20\\
-$\tau_{4}$ & 1 &   &   & 20\\
-\bottomrule
-\end{tabular}
-\end{table}
-
+\begin{figure}[h] 
+	\centering  
+	\includegraphics[scale=1]{ular-pdf}  
+	\caption[ {\it Serpentes} betina]{ {\it Serpentes} jantan} 
+	\label{fig:ularpdf} 
+\end{figure} 
+ 
