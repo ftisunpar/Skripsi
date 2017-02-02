@@ -1,8 +1,8 @@
-% Perubahan ke 1 (08-10-201^)
+% Perubahan ke 1 (08-10-2016)
 % oleh Lionov - T. Informatika FTIS UNPAR
 %
 % - Perubahan ke bahasa Indonesia :
-%   and->dan, In->Bagian dari et al.->dkk(walaupun tidak akan muncul) 
+%   and->dan, In->"Bagian dari" et al.->dkk(walaupun tidak akan muncul) 
 % - Dibuat entri terpisah untuk skripsi, thesis dan disertasi
 % - Dibuat entri khusus untuk rfc, paten dan web
 % - Dibuat field khusus untuk url(otomatis clickable di pdf) dan access

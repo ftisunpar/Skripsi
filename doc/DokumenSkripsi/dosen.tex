@@ -1,38 +1,34 @@
 %_____________________________________________________________________________
 %=============================================================================
-% dosen.tex v6 (19-08-2016) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% dosen.tex v7 (28-01-2017) dibuat oleh Lionov - T. Informatika FTIS UNPAR
 %
-% Perubahan pada versi 6 (19-08-2016)
-% 	- Penambahan dosen (Farica, Claudio).
-%	- Penghapusan dosen (Oerip)
-% 	- Perubahan singkatan untuk dosen Informatika sesuai ketentuan prodi
-%	- Perbaikan "catatan untuk mhs teknik informatika"
-%
-% Perubahan pada versi sebelumnya dapat dilihat di bagian akhir file ini
+% Perubahan pada versi 7 (28-01-2017)
+%	- kaprodi (sebelumnya kajur) dan dideklarasikan di skripsi.tex
+%	- memisahkan kaprodi per prodi
+%	- menghapus dummy
+%   - perubahan gelar untuk BNY
 %_____________________________________________________________________________
 %=============================================================================
 
 %=============================================================================
-% Data dosen dan kajur FTIS - JANGAN MENGUBAH APAPUN DI BAGIAN INI, KECUALI
-% untuk mengubah kajur (jika kajur telah berganti orang) atau menambahkan 
+% Data dosen dan kaprodi FTIS - JANGAN MENGUBAH APAPUN DI BAGIAN INI, KECUALI
+% untuk mengubah kaprodi (jika kaprodi telah berganti orang) atau menambahkan 
 % pembimbing anda yang tidak/belum tercantum pada daftar ini atau 
 % memperbaiki penulisan gelar jika penguji anda meminta
-% perintah: \kajur{1}{2}{3} 1: Matematika 2: Fisika 3: Teknik Informatika
 %=============================================================================
-% CATATAN UNTUK MAHASISWA TEKNIK INFORMATIKA :
+%  CATATAN UNTUK MAHASISWA TEKNIK INFORMATIKA :
 % dosen yang ditandai * :
 % - jika menjadi pembimbing : harus diganti, penggantinya mengikuti petunjuk
 % 	dari koordinator Skripsi !
-% - jika menjadi penguji: tidak diganti, tetapi hapus komentar (tanda % dan *) 
-%	agar dapat digunakan
+% - jika menjadi penguji: tidak diganti, tetapi hapus komentar dan '*' agar 
+%   dapat digunakan
 %=============================================================================
 
-\kajur{\JDL}{\PNG}{\MTA} 
 
-%dummy person
-\newcommand{\JND}{Jane\,Doe} 
-\newcommand{\JHD}{John\,Doe}
-\newcommand{\JCD}{Jack\,Doe}
+%\kaprodi{\JDL}{\PNG}{\MTA} 
+\renewcommand{\kaprodiMAT}{\JDL}
+\renewcommand{\kaprodiFIS}{\PNG}
+\renewcommand{\kaprodiTIF}{\MTA}
 
 % Dosen-dosen Program Studi Matematika
 \newcommand{\JDL}{Dr.\,Julius\,Dharma\,Lesmono}
@@ -45,7 +41,7 @@
 \newcommand{\IWS}{Iwan\,Sugiarto,\,M.Si.}
 \newcommand{\IVM}{Ivonne\,Martin,\,M.Sc.}
 \newcommand{\OWN}{Livia\,Owen,\,M.Si.}
-\newcommand{\BNY}{Benny\,Yong,\,M.Si.}
+\newcommand{\BNY}{Dr. Benny\,Yong}
 \newcommand{\TFK}{Taufik\,Limansyah,\,M.T.}
 \newcommand{\MRA}{Maria\,Anestasia,\,M.Si.}
 
@@ -83,5 +79,3 @@
 % * \newcommand{\ABS}{Aditya\,Bagoes\,Saputra,\,M.T.} 
 % * \newcommand{\CLF}{Claudio\,Franciscus,\,M.T.} 
 % * \newcommand{\NAT}{Natalia,\,M.Si.} 
-
-% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved
