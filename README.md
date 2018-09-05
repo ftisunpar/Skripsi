@@ -52,8 +52,7 @@ Catatan:
 #### Penilaian
 
 * UTS
-    - Progress Report (sesuai [template](https://github.com/pascalalfadian/Skripsi/tree/master/doc/ProgressReport)) di github (syarat Pascal)
-    - PDF Dokumen Skripsi (bab 1 dan 2) di github (syarat Pascal)
+    - Dinilai dari progres per minggu. Mahasiswa tidak perlu mengumpulkan apapun.
 * UAS
     - Progress Report (sesuai [template](https://github.com/pascalalfadian/Skripsi/tree/master/doc/ProgressReport)) di github (syarat koordinator)
     - Dokumen Skripsi (bab 1, 2, 3) di github (syarat Pascal)
