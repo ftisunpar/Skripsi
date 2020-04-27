@@ -1,5 +1,5 @@
 % Perubahan ke 1 (08-10-2016)
-% oleh Lionov - T. Informatika FTIS UNPAR
+% oleh Lionov - Informatika FTIS UNPAR
 %
 % - Perubahan ke bahasa Indonesia :
 %   and->dan, In->"Bagian dari" et al.->dkk(walaupun tidak akan muncul) 
@@ -9,7 +9,7 @@
 % - Penambahan field url dan access untuk entri unpublished
 
 % cj.bst v1.1 2003-08-18
-% Antonio Vallecillo (av@lcc.uma.es)f
+% Antonio Vallecillo (av@lcc.uma.es)
 % Revision History:
 %     v1.1 - First version (2003-08-18)
 %

@@ -1,6 +1,7 @@
 
-                   TEMPLATE SKRIPSI / TUGAS AKHIR FTIS UNPAR 
-			   versi: 12.0 (27-01-2017)
+        TEMPLATE SKRIPSI / TUGAS AKHIR FTIS UNPAR 
+            http://tiny.cc/templateSkripsiFTIS
+			   versi: 12.1 (19-01-2019)
 
 ===============================================================================
 				0. SELAMAT DATANG
@@ -19,9 +20,34 @@ ATAU MENCARI TAHU SENDIRI JAWABANNYA MELALUI INTERNET.
 Penggunaan oleh mahasiswi/a non FTIS UNPAR, harap memberitahu terlebih dahulu 
 ke alamat email di atas.
 
+Penggunaan www.overleaf.com:
+Overleaf adalah online LaTeX editor berbasis web, sehingga anda dapat
+menggunakannya tanpa perlu melakukan instalasi LaTeX (dan editornya) di
+komputer/laptop anda.
+A) Jika anda ingin menggunakan overleaf, buat akun di overleaf kemudian login. 
+Kunjungi lagi halaman ini dan klik tanda panah ke atas di sebelah "Menu" (kiri
+atas). Template akan masuk ke dalam akun anda. Copy template agar dapat 
+digunakan untuk membuat skripsi.
+B) Jika anda lebih suka cara konvensional (download template dan menggunakannya
+di komputer/laptop, klik "Menu" (kiri atas) dan pilih "Source" di bagian
+"Download"
+
 ===============================================================================
 				1. VERSI
 ===============================================================================
+
+Versi: 12.1 (19-01-2019)
+terdiri dari : 
+- READ_ME_FIRST_v12-1_!!!!!!.txt*
+- skripsi.tex (v.12) (27-01-2017)
+- data.tex (v.10) (22-01-2017)
+- dosen.tex (v.8) (19-01-2019)*
+- referensi.bib (v.2) (03-10-2016)
+- Logo-UNPAR.png
+- beberapa file .tex (versi dapat dilihat di masing-masing file) dan gambar 
+lainnya sebagai contoh dan petunjuk 
+
+*: yang berubah dari versi 12.0
 
 Mulai versi 11.0, penomoran versi mengikuti pola X.Y
 - Perubahan pada bagian X (mayor): ada perubahan signifikan pada template 
@@ -34,18 +60,6 @@ Catatan: data dosen hanya akan diperbaharui sebelum semester dimulai, jika ada
 perubahan data dosen di tengah semester, mohon memperbaharui sendiri data dosen
 di file dosen.tex 
 
-Versi: 12.0 (28-01-2017)
-terdiri dari : 
-- READ_ME_FIRST_v12-0_!!!!!!.txt
-- skripsi.tex (v.12) (27-01-2017)*
-- data.tex (v.10) (22-01-2017)*
-- dosen.tex (v.7) (28-01-2017)*
-- referensi.bib (v.2) (03-10-2016)
-- Logo-UNPAR.png
-- beberapa file .tex (versi dapat dilihat di masing-masing file) dan gambar 
-lainnya sebagai contoh dan petunjuk 
-
-*: yang berubah dari versi 11.1
 
 ===============================================================================
 				2. PERHATIAN !!!
@@ -115,7 +129,10 @@ Jika akan melakukan update:
 ===============================================================================
 				5. PERANGKAT LUNAK 
 ===============================================================================
-Template Skripsi FTIS versi 12.0 ini dibuat dengan:
+Template Skripsi FTIS versi 12.1 ini dibuat menggunakan:
+www.overleaf.com
+
+Template Skripsi FTIS versi 12.0 dibuat menggunakan:
 - Windows 10 Pro 64-bit
 - TeX 3.14159265 (MiKTeX 2.9 64-bit)
 - pdfTeX 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit)
@@ -126,7 +143,7 @@ Template Skripsi FTIS versi 12.0 ini dibuat dengan:
 				6. DAFTAR ISI 
 ===============================================================================
 Template ini terdiri dari:
-- READ_ME_FIRST_v12-0_!!!!!!.txt
+- READ_ME_FIRST_v12-1_!!!!!!.txt
 - skripsi.tex
 - skripsi.pdf
 - dosen.tex
@@ -146,6 +163,21 @@ Template ini terdiri dari:
 ===============================================================================
 				7. DAFTAR CATATAN PERUBAHAN 
 ===============================================================================
+
+CATATAN Versi 12.1 (19-01-2019)
+terdiri dari : 
+- skripsi.tex (v.12) (27-01-2017)
+- data.tex (v.10) (22-01-2017)
+- dosen.tex (v.8) (19-01-2019)*
+- referensi.bib (v.2) (03-10-2016)
+*: yang berubah dari versi 12.0
+
+Perubahan pada:
+- dosen.tex (v.8) (19-01-2019)*
+	- kaprodi (sebelumnya kajur) dan dideklarasikan di skripsi.tex
+	- memisahkan kaprodi per prodi
+	- menghapus dummy
+ 	- perubahan gelar untuk BNY
 
 CATATAN Versi 12.0 (28-01-2017)
 terdiri dari : 
@@ -500,4 +532,4 @@ Catatan penting:
 _______________________________________________________________________________
 ===============================================================================
 
-Copyright \textcopyright 2011-2017 [Lionov W.]. All rights reserved.
+Copyright \textcopyright 2011-2019 [Lionov W.]. All rights reserved.
