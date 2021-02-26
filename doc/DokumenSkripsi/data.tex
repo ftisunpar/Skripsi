@@ -1,14 +1,15 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v10 (22-01-2017) dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v11 (24-07-2020) dibuat oleh Lionov - Informatika FTIS UNPAR
 %
-% Perubahan pada versi 10 (22-01-2017)
-%	- Penambahan overfullrule untuk memeriksa warning
-%  	- perubahan mode buku menjadi 4: bimbingan, sidang(1), sidang akhir dan 
-%     buku final
-%	- perbaikan perintah pada beberapa bagian
-%  	- perubahan pengisian tulisan "daftar isi" yang error
-%  	- penghilangan lipsum dari file ini
+% Perubahan pada versi 11 (24-07-2020)
+%	- Penambahan enumitem dan nosep untuk semua list, untuk menghemat kertas
+%   - Bagian V: penambahan opsi Daftar Kode Program dan Daftar Notasi
+%   - Bagian XIV: menjadi Bagian XVI
+%   - Bagian XV: menjadi Bagian XVII
+%   - Bagian XIV yang baru: untuk pilihan jenis tanda tangan mahasiswa
+%   - Bagian XV yang baru: untuk pilihan munculnya tanda tangan digital untuk
+%     dosen/pejabat
 %_____________________________________________________________________________
 %=============================================================================
 
@@ -47,6 +48,7 @@
 \usepackage{todo}
 \usepackage{verbatim} 		%multiline comment
 \usepackage{pgfplots}
+\usepackage{enumitem}
 %\overfullrule=3mm % memperlihatkan overfull 
 %=============================================================================
 
@@ -54,7 +56,7 @@
 %=============================================================================
 % 								BAGIAN II
 %=============================================================================
-% Mode dokumen: menetukan halaman depan dari dokumen, apakah harus mengandung 
+% Mode dokumen: menentukan halaman depan dari dokumen, apakah harus mengandung 
 % prakata/pernyataan/abstrak dll (termasuk daftar gambar/tabel/isi) ?
 % - final 		: hanya untuk buku skripsi, dicetak lengkap: judul ina/eng, 
 %   			  pengesahan, pernyataan, abstrak ina/eng, untuk, kata 
@@ -78,6 +80,7 @@
 %\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
 %\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
+\mode{final}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -120,18 +123,22 @@
 %=============================================================================
 % 								BAGIAN V
 %=============================================================================
-% Tidak semua skripsi memuat gambar dan/atau tabel. Untuk skripsi yang tidak 
-% memiliki gambar dan/atau tabel, maka tidak diperlukan Daftar Gambar dan/atau 
-% Daftar Tabel. Sayangnya hal tsb sulit dilakukan secara manual karena 
-% membutuhkan kedisiplinan pengguna template.  
-% Jika tidak ingin menampilkan Daftar Gambar dan/atau Daftar Tabel, karena 
-% tidak ada gambar atau tabel atau karena dokumen dicetak hanya untuk 
-% bimbingan, isi dengan "no" (e.g. \gambar{no})
+% Tidak semua skripsi memuat gambar, tabel, kode program, dan/atau notasi. 
+% Untuk skripsi yang tidak memuat hal-hal tersebut, maka tidak diperlukan 
+% Daftar Gambar, Daftar Tabel, Daftar Kode Program, dan/atau Daftar Notasi. 
+% Sayangnya hal tsb sulit dilakukan secara manual karena membutuhkan 
+% kedisiplinan pengguna template.  
+% Jika tidak ingin menampilkan satu/lebih daftar-daftar tersebut (misalnya 
+% untuk bimbingan), isi dengan "no" (e.g. \gambar{no})
 %=============================================================================
 \gambar{yes}
 %\gambar{no}
-\tabel{yes}
-%\tabel{no}  
+%\tabel{yes}
+\tabel{no} 
+%\kode{yes}
+\kode{no} 
+%\notasi{yes}
+\notasi{no}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -269,6 +276,49 @@
 %=============================================================================
 % 								BAGIAN XIV
 %=============================================================================
+% Jenis tandatangan di lembar pernyataan mahasiswa tentang plagiarisme.
+% Ada 4 pilihan:
+%   - digital   : diisi menggunakan digital signature (menggunakan pengolah
+%                 pdf seperti Adobe Acrobat Reader DC).
+%   - gambar    : diisi dengan gambar tandatangan mahasiswa (file tandatangan
+%                 bertipe pdf/png/jpg). Dianjukan menggunakan warna biru.
+%                 Letakkan gambar di folder "Gambar" dengan nama ttd.jpg/
+%                 ttd.png/ttd.pdf (tergantung jenis file. Hapus file ttd.jpg
+%                 yang digunakan sebagai contoh
+%   - materai   : khusus bagi yang ingin mencetak buku dan menandatangani di 
+%                 atas materai. Sama dengan pilihan ``digital'' dan dicetak.
+%   - kosong    : tempat kosong ini bisa diisi dengan tanda tangan yang
+%                 digambar langsung di atas pdf (fill&sign via acrobat, tanda
+%                 tangan dapat dibuat dengan mouse atau stylus)
+%=============================================================================
+%\ttd{digital}
+%\ttd{gambar}
+%\ttd{materai}
+%\ttd{kosong}
+%=============================================================================
+\ttd{gambar}
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XV
+%=============================================================================
+% Pilihan tanda tangan digital untuk dosen/pejabat:
+%   - no    : pdf TIDAK dapat ditandatangani secara digital, mengakomodasi 
+%             yang akan menandatangani via ``menulis'' di file pdf
+%   - yes   : pdf dapat ditandatangani secara digital
+% 
+% PERHATIAN: perubahan ini harus ditanyakan ke kaprodi/dosen koordinator, 
+% apakah harus mengisi ``no" atau ``yes". Default = no 
+% Untuk mahasiswa Informatika = yes
+%=============================================================================
+%\ttddosen{yes}
+%=============================================================================
+\ttddosen{no}
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XVI
+%=============================================================================
 % Tambahkan hyphen (pemenggalan kata) yang anda butuhkan di sini 
 %=============================================================================
 \hyphenation{ma-te-ma-ti-ka}
@@ -279,10 +329,11 @@
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN XV
+% 								BAGIAN XVII
 %=============================================================================
 % Tambahkan perintah yang anda buat sendiri di sini 
 %=============================================================================
 \renewcommand{\vtemplateauthor}{lionov}
 \pgfplotsset{compat=newest}
+\setlist{nosep}
 %=============================================================================

@@ -9,7 +9,7 @@ Catatan:
 
 * **Jangan menaruh PDF e-book di sini**, karena berukuran besar dan beresiko terkena tuntuan HAKI
 * **Jangan menaruh file poster di sini**, karena berukuran besar. Taruh saja di GDrive atau OneDrive
-* Ubahlah nama di berkas `LICENSE.md` dengan nama Anda (boleh juga ubah seluruh lisensinya sekaligus)
+* Ubahlah nama di berkas `LICENSE` dengan nama Anda (boleh juga ubah seluruh lisensinya sekaligus)
 
 Peraturan Koordinator
 ---------------------

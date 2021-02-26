@@ -1,7 +1,7 @@
 
         TEMPLATE SKRIPSI / TUGAS AKHIR FTIS UNPAR 
             http://tiny.cc/templateSkripsiFTIS
-			   versi: 12.1 (19-01-2019)
+			   versi: 13.0 (24-07-2020)
 
 ===============================================================================
 				0. SELAMAT DATANG
@@ -11,8 +11,7 @@ yang dibuat oleh Lionov.
 
 Pertanyaan terkait template dapat diajukan melalui email ke lionov@unpar.ac.id 
 atau ke lionov@gmail.com 
-atau datang langsung ke ruang 4.21, BuysBallotGebouw, Universiteit Utrecht, 
-Princetonplein 5 3584CC Utrecht, Belanda.
+atau datang langsung ke ruang 9123 Gedung 9 UNPAR Ciumbuleuit 94 Bandung 
 
 PERTANYAAN TERKAIT LATEX DAPAT DIAJUKAN KEPADA PEMBIMBING MASING-MASING 
 ATAU MENCARI TAHU SENDIRI JAWABANNYA MELALUI INTERNET.
@@ -36,18 +35,19 @@ di komputer/laptop, klik "Menu" (kiri atas) dan pilih "Source" di bagian
 				1. VERSI
 ===============================================================================
 
-Versi: 12.1 (19-01-2019)
+Versi: 13.0 (24-07-2020)
 terdiri dari : 
-- READ_ME_FIRST_v12-1_!!!!!!.txt*
-- skripsi.tex (v.12) (27-01-2017)
-- data.tex (v.10) (22-01-2017)
-- dosen.tex (v.8) (19-01-2019)*
+- READ_ME_FIRST_v13-0_!!!!!!.txt*
+- skripsi.tex (v.13) (24-07-2020)*
+- data.tex (v.11) (24-07-2020)*
+- dosen.tex (v.9) (24-07-2020)*
 - referensi.bib (v.2) (03-10-2016)
+- ttd.jpg
 - Logo-UNPAR.png
 - beberapa file .tex (versi dapat dilihat di masing-masing file) dan gambar 
 lainnya sebagai contoh dan petunjuk 
 
-*: yang berubah dari versi 12.0
+*: yang berubah dari versi 12.1
 
 Mulai versi 11.0, penomoran versi mengikuti pola X.Y
 - Perubahan pada bagian X (mayor): ada perubahan signifikan pada template 
@@ -77,6 +77,7 @@ di file dosen.tex
     lembar pengesahan, lembar pernyataan, abstrak, abstract, 
     lembar persembahan, kata pengantar, daftar isi, daftar gambar dan
     daftar tabel. 
+
 
 ===============================================================================
 				3. CARA PENGGUNAAN
@@ -110,7 +111,7 @@ di file dosen.tex
    menghasilkan file PDF)
 
 ===============================================================================
-				4. CARA MELAKUKAN UPDATE 
+				4. CARA MELAKUKAN UPDATE & TANDA TANGAN DIGITAL
 ===============================================================================
 Cara melakukan update apabila ada template dengan versi lebih baru :
 - Perhatikan versi yang anda gunakan dan versi terbaru (versi X.Y).  
@@ -118,50 +119,159 @@ Cara melakukan update apabila ada template dengan versi lebih baru :
 - Jika perubahan hanya pada bagian Y, disesuaikan dengan kebutuhan masing2.
 Perubahan di file bab/lampiran tidak berpengaruh pada isi dokumen skripsi anda.
 
-Jika akan melakukan update:
-1. PASTIKAN anda melakukan back-up untuk semua file yang akan anda perbaharui !
-2. Timpa (overwrite) file versi lama dengan file yang lebih baru:
-   - dosen.tex   : overwrite langsung
-   - skripsi.tex dan data.tex: jika anda melakukan penambahan/perubahan, 
-     simpan perubahan, overwrite dan lakukan perubahan  di file yang baru
-3. Jalankan lagi pdflatex untuk mendapatkan dokumen pdf yang terbaru
+Cara melakukan update dari versi 12.1 ke 13.0
+A. Cara 1
+    1. Hapus file compj.bst di folder skripsi anda (yang lama)
+    2. Copy folder .sty (baru) ke folder skripsi anda (yang lama)
+    3. Overwrite file dosen.tex dan skripsi.tex dengan file yang baru
+    4. Copy file ttd.jpg (ada di folder Gambar yg baru) ke dalam folder Gambar 
+       anda (yang lama)
+    5. Tambahkan perintah \kode{no} di data.tex Bagian V (lihat data.tex yang 
+       baru) atau \kode{yes} jika anda ingin membuat daftar kode program
+       Tambahkan perintah \notasi{no} di data.tex Bagian V (lihat data.tex yang 
+       baru) atau \notasi{yes} jika anda ingin membuat daftar notasi
+    6. Tambahkan perintah \ttd{gambar} di bagian bawah data.tex anda
+       atau \ttd{digital} jika anda ingin membuat tanda tangan digital. Lihat 
+       Bagian XIV di data.tex yg baru agar lebih jelas mengenai tanda tangan
+    7. Selesai dan coba di-compile lagi dengan pdflatex
+B. Cara 2
+    1. Siapkan direktori baru untuk skripsi anda (atau project baru di overleaf)
+    2. Copy seluruh file di folder Bab, Gambar, dan Lampiran (yang lama) ke 
+       masing-masing folder di skripsi yang baru
+    3. Lakukan perubahan di data.tex yang baru, sesuai dengan informasi yang 
+       sudah diisi di data.tex yang lama. Perhatikan Bagian V dan XIV, bagian
+       baru di data.tex yang baru. Bagian XIV dan XV di data.tex lama menjadi
+       Bagian XV dan XVI di data.tex baru
+
+Tambahan: 
+Cara melakukan update dari versi 13.0 (tgl 22-07-2020) ke 13.0 (tgl 22-07-2020)
+1. Overwrite file skripsi.tex dengan file skripsi.tex yang baru (perhatikan 
+tanggal di baris 18)
+2. tambahkan perintah ``\ttddosen{yes}'' atau ``\ttddosen{no}'' di file data.tex 
+
+---------------------------------------------------------------------------------
+CARA TANDA TANGAN MANUAL DENGAN MENGGUNAKAN FILE BERISI GAMBAR TANDA TANGAN:
+lihat di Bagian XIV pada file data.tex
+
+CARA TANDA TANGAN DIGITAL DENGAN ADOBE ACROBAT READER DC
+Persiapan:
+    1. Siapkan gambar tanda tangan anda, berformat PDF (BUKAN JPG/PNG/GIF/dlsb)
+    2. Install program Adobe Acrobat Reader DC (free) disarankan yang terbaru
+Cara membuat:
+    1. Buka Adobe Acrobat Reader DC
+    2. Pilih Edit->Preferences (atau Ctrl-K)
+    3. Dari Categories, pilih Signatures
+    4. Di sebelah kanan muncul Digital Signatures, klik tombol "More" di bagian
+       Identities & Trust certificates
+    5. Pilih "Digital IDs" di sebelah kiri dan Klik "Add Digital ID" (gambar kartu 
+       dengan tanda plus)
+    6. Pilih "A New Digital ID I want to create now" (klik Next)
+    7. Pilih "New PKCS#12 digital ID Files" (klik Next)
+    8. Isi Nama dan email address, ubah country menjadi Indonesia, ubah "Use
+       digital ID for" menjadi Digital Signatures (saja) (klik Next)
+       Email address sebaiknya yang non-unpar (karena akan hilang setelah lulus)
+    9. Masukkan password dan confirm password (klik Next)
+    10.Kembali ke langkah 4, sekarang klik tombol "More" di bagian Creation &
+       Appearance
+    11.Di bagian Appearances, klik "New"
+    12.Isi title (misalnya dengan nama anda)
+    13.Di bagian Configure Graphic, pilih Imported Graphic, klik File dan pilih
+       file pdf bergambar tanda tangan anda yang telah disiapkan sebelumnya
+    14.Di bagian configure text, kosongkan seluruhnya
+    15.Perhatikan di bagian preview, hanya ada gambar tanda tangan anda saja!
+    16.Selsai, klik OK
+Cara menggunakan:
+    1. Pilih command \ttd{digital} di data.tex
+    2. Compile skripsi anda menjadi file pdf
+    3. Buka file pdf dengan Adobe Acrobat Reader DC
+    4. Di halaman "Pernyataan" terdapat kotak berwarna biru muda, klik kotak tsb
+    5. Pilih Digital ID anda dan klik Continue
+    6. Pilih Appearance yang telah anda buat dan perhatikan bahwa hanya boleh 
+       ada gambar tanda tangan anda tanpa adanya tulisan lain
+    7. _JANGAN_ men-check pilihan "Lock document after signing"!!!! (kalau ada)
+    8. Reason: pilih "I am the author of this document"
+    9. Isi Location, kota tempat anda membuat ini dan contact info dengan email
+    10.Isi password dan klik Sign
+    11.Simpan file skripsi dgn nama Skripsi-<npm>, mis:Skripsi-1997730020.pdf
+    12.File pdf tsb siap dikirim ke pembimbing
 
 ===============================================================================
 				5. PERANGKAT LUNAK 
 ===============================================================================
-Template Skripsi FTIS versi 12.1 ini dibuat menggunakan:
+Template Skripsi FTIS versi 13.0 ini dibuat menggunakan:
 www.overleaf.com
 
-Template Skripsi FTIS versi 12.0 dibuat menggunakan:
+Template Skripsi FTIS versi seblumnya (<12.0) dibuat menggunakan:
 - Windows 10 Pro 64-bit
 - TeX 3.14159265 (MiKTeX 2.9 64-bit)
 - pdfTeX 3.14159265-2.6-1.40.16 (MiKTeX 2.9 64-bit)
 - TexStudio 2.12.0
 - EmEditor Free (64-bit) 15.6.1
 
+
 ===============================================================================
 				6. DAFTAR ISI 
 ===============================================================================
 Template ini terdiri dari:
-- READ_ME_FIRST_v12-1_!!!!!!.txt
+- READ_ME_FIRST_v13-0_!!!!!!.txt
 - skripsi.tex
 - skripsi.pdf
 - dosen.tex
 - data.tex
 - referensi.bib
+- .sty/compj.bst (diambil dari computer journal dan dimodifikasi seperlunya)
+- .sty/digsig.sty (http://home.htp-tel.de/lottermose2/tex/dist/digsig.sty)
 - Bab/bab1.tex
 - Bab/bab2.tex
 - Gambar/Logo-UNPAR.png (official dari website UNPAR)
+- Gambar/ttd.jpg (contoh tanda tangan dari Husnul Hakim)
 - Gambar/ular-jpg.jpg
 - Gambar/ular-png.png
 - Gambar/ular-pdf.pdf
 - Lampiran/lampA.tex
 - Lampiran/lampB.tex
 - Lampiran/MyCode.java
-- compj.bst (diambil dari computer journal dan dimodifikasi seperlunya)
+
 
 ===============================================================================
 				7. DAFTAR CATATAN PERUBAHAN 
+===============================================================================
+
+CATATAN Versi 13.0 (24-07-2020)
+terdiri dari : 
+- skripsi.tex (v.13) (24-07-2020)*
+- data.tex (v.11) (24-07-2020)*
+- dosen.tex (v.9) (24-07-2020)*
+- referensi.bib (v.2) (03-10-2016)
+*: yang berubah dari versi 12.1
+
+Perubahan pada:
+- skripsi.tex (v.13) (24-07-2020)*
+    - penambahan opsi digital signature untuk para dosen
+    - penambahan tiga opsi tanda tangan untuk mahasiswa
+    - dapat menangani format npm baru (per angkatan 2018)
+    - penambahan daftar listings (kode program)
+    - penambahan gambar kotak untuk kode program
+    - pemindahan file compj.bst dan digsig.sty ke folder .sty
+    - format kode program di bab dan penambahan kotak untuk kode program
+    - penambahan daftar notasi
+
+- data.tex (v.11) (24-07-2020)*
+	- Penambahan enumitem dan nosep untuk semua list, untuk menghemat kertas
+    - Bagian V: penambahan opsi Daftar Kode Program dan Daftar Notasi
+    - Bagian XIV: menjadi Bagian XVI
+    - Bagian XV: menjadi Bagian XVII
+    - Bagian XIV yang baru: pilihan jenis tanda tangan mahasiswa
+    - Bagian XV yang baru: pilihan munculnya tanda tangan digital untuk
+      dosen/pejabat
+
+- dosen.tex (v.9) (24-07-2020)*
+    - MAT: gelar FAR,IVM,BNY,MRA,FEL,WSB,FJP; tambah DAS,APW
+ 	- FIS: gelar JVS,RUS; nama HRY
+ 	- IF : hapus TAB; gelar LNV; pembimbing HUH,PAS
+    - Mengganti semua \, dengan ~
+
+_______________________________________________________________________________
 ===============================================================================
 
 CATATAN Versi 12.1 (19-01-2019)
@@ -174,10 +284,12 @@ terdiri dari :
 
 Perubahan pada:
 - dosen.tex (v.8) (19-01-2019)*
-	- kaprodi (sebelumnya kajur) dan dideklarasikan di skripsi.tex
-	- memisahkan kaprodi per prodi
-	- menghapus dummy
- 	- perubahan gelar untuk BNY
+    - MAT: ganti kaprodi; gelar MRA,ERW; tambah FEL
+    - FIS: ganti kaprodi; hapus BNY,FEY; gelar JVS,KMG, 
+    - IF : hapus NIS,ABS,CLF; gelar RDL; tambah RCP,KDH,KAL
+
+_______________________________________________________________________________
+===============================================================================
 
 CATATAN Versi 12.0 (28-01-2017)
 terdiri dari : 
@@ -532,4 +644,4 @@ Catatan penting:
 _______________________________________________________________________________
 ===============================================================================
 
-Copyright \textcopyright 2011-2019 [Lionov W.]. All rights reserved.
+Copyright \textcopyright 2011-2020 [Lionov W.]. All rights reserved.

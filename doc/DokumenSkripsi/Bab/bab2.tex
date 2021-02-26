@@ -1,4 +1,4 @@
-%versi 2 (8-10-2016)
+%versi 3 (22-07-2020)
 \chapter{Landasan Teori}
 \label{chap:teori}
 
@@ -156,3 +156,47 @@ Beberapa hal yang harus diperhatikan pada saat menempatkan gambar:
 	\label{fig:ularpdf} 
 \end{figure} 
  
+\subsection{Kode Program}
+
+Kode program dalam bahasa tertentu seringkali harus ditulis di dalam bab, bukan hanya dilampirkan di bagian Lampiran. 
+Kode~\ref{kode:aneh} menampilkan penggunaan karakter-karakter yang umum digunakan dalam sebuah program yang ditulis dengan bahasa C.
+
+
+\begin{lstlisting}[language=Java, caption=Kode untuk menampilkan karakter-karakter aneh, label=kode:aneh]
+// This does not make algorithmic sense, 
+// but it shows off significant programming characters.
+
+#include<stdio.h>
+
+void myFunction( int input, float* output ) {
+	switch ( array[i] ) {
+		case 1: // This is silly code
+			if ( a >= 0 || b <= 3 && c != x )
+				*output += 0.005 + 20050;
+			char = 'g';
+			b = 2^n + ~right_size - leftSize * MAX_SIZE;
+			c = (--aaa + &daa) / (bbb++ - ccc % 2 );
+			strcpy(a,"hello $@?"); 
+	}
+	count = ~mask | 0x00FF00AA;
+}
+
+// Fonts for Displaying Program Code in LATEX
+// Adrian P. Robson, nepsweb.co.uk
+// 8 October 2012
+// http://nepsweb.co.uk/docs/progfonts.pdf
+
+\end{lstlisting}
+
+\subsection{Notasi}
+
+Simbol-simbol (matematika) yang sering digunakan sepanjang penulisan skripsi, dapat dimasukkan ke dalam ``Daftar Notasi''. Daftar ini ada di halaman depan sebelum Bab~\ref{chap:intro}.
+Cara memasukkan sebuah simbol ke dalam Daftar Notasi adalah menggunakan perintah \verb|\nomenclature|. Contoh:
+\begin{center}
+    \verb|\nomenclature[]{$A$}{luas kandang ular}|    
+\end{center}
+\nomenclature[]{$A$}{luas kandang ular}
+\nomenclature[]{$n$}{banyaknya ular}
+\nomenclature[]{$k$}{jumlah kepala per seekor ular\nomrefpage}
+Argumen opsional digunakan untuk mengurutkan notasi. Silahkan lihat sendiri dokumentasi package \verb|nomencl|
+
