@@ -1,7 +1,7 @@
 
         TEMPLATE SKRIPSI / TUGAS AKHIR FTIS UNPAR 
             http://tiny.cc/templateSkripsiFTIS
-			   versi: 13.0 (24-07-2020)
+			   versi: 13.1 (01-09-2021)
 
 ===============================================================================
 				0. SELAMAT DATANG
@@ -35,19 +35,19 @@ di komputer/laptop, klik "Menu" (kiri atas) dan pilih "Source" di bagian
 				1. VERSI
 ===============================================================================
 
-Versi: 13.0 (24-07-2020)
+Versi: 13.1 (01-09-2021)
 terdiri dari : 
-- READ_ME_FIRST_v13-0_!!!!!!.txt*
-- skripsi.tex (v.13) (24-07-2020)*
-- data.tex (v.11) (24-07-2020)*
-- dosen.tex (v.9) (24-07-2020)*
+- READ_ME_FIRST_v13-1_!!!!!!.txt
+- skripsi.tex (v.13) (24-07-2020)
+- data.tex (v.11) (24-07-2020)
+- dosen.tex (v.10) (01-09-2021)*
 - referensi.bib (v.2) (03-10-2016)
 - ttd.jpg
 - Logo-UNPAR.png
 - beberapa file .tex (versi dapat dilihat di masing-masing file) dan gambar 
 lainnya sebagai contoh dan petunjuk 
 
-*: yang berubah dari versi 12.1
+*: yang berubah dari versi 13.0
 
 Mulai versi 11.0, penomoran versi mengikuti pola X.Y
 - Perubahan pada bagian X (mayor): ada perubahan signifikan pada template 
@@ -235,6 +235,30 @@ Template ini terdiri dari:
 
 ===============================================================================
 				7. DAFTAR CATATAN PERUBAHAN 
+===============================================================================
+
+CATATAN Versi: 13.1 (01-09-2021)
+terdiri dari : 
+- READ_ME_FIRST_v13-1_!!!!!!.txt
+- skripsi.tex (v.13) (24-07-2020)
+- data.tex (v.11) (24-07-2020)
+- dosen.tex (v.10) (01-09-2021)*
+- referensi.bib (v.2) (03-10-2016)
+- ttd.jpg
+- Logo-UNPAR.png
+- beberapa file .tex (versi dapat dilihat di masing-masing file) dan gambar 
+lainnya sebagai contoh dan petunjuk 
+
+*: yang berubah dari versi 13.0
+
+
+Perubahan pada:
+- dosen.tex (v.10) (01-09-2021)*
+    - MAT: gelar OWN, tambah JOH, RRF, Hapus IVM
+    - FIS: gelar ELK
+	- IF : gelar KAL, tambah IGN, MVC
+
+_______________________________________________________________________________
 ===============================================================================
 
 CATATAN Versi 13.0 (24-07-2020)
@@ -644,4 +668,4 @@ Catatan penting:
 _______________________________________________________________________________
 ===============================================================================
 
-Copyright \textcopyright 2011-2020 [Lionov W.]. All rights reserved.
+Copyright \textcopyright 2011-2021 [Lionov W.]. All rights reserved.
